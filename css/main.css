@@ -1,0 +1,531 @@
+/*reset de Eric Meyer*/
+
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+body {
+    line-height: 1; }
+ol, ul {
+    list-style: none; }
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle; }
+q, blockquote {
+    quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+a img {
+    border: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block; }*/
+
+/*END reset*/
+
+
+*{
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, div {
+    display: block;
+}
+
+html {
+    font-size: 16px;
+}
+ul, hr, h1, h2, h3, p{
+    margin: 0;
+    padding: 0;
+}
+p{
+    line-height: 1.2em;
+
+}
+h1{
+    color: #666666;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+hr{
+
+}
+
+
+.container{
+    width: 95%;
+    margin: 0 auto;
+    /*padding: 0 20px 0 20px;*/
+    /*border: solid 1px #000000;*/
+    font-family: 'Mitr', sans-serif;
+    font-weight:300;
+}
+
+
+/* -------------------------SYSTEME DE GRILLES ------------------------*/
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%; /*background-color: #980635*/}
+.col-4{width: 33.33%; }
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%; }
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    /*padding: 0 15px;*/
+}
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/*	STYLES JUSQU'A 960PX inclus**********/
+@media only screen and (max-width:960px) {
+    /*on définit des classes pour les largeurs de colonnes version tablettes*/
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+
+/***********************/
+/*STYLES POUR TÉLÉPHONES JUSQU'A 768PX INCLUS*/
+@media only screen and (max-width:768px){
+
+    [class*="col-"] {
+        width:100%;
+    }
+}
+
+/* ---------------------------------END SYSTEME DE GRILLES---------------- */
+
+.sec_login{
+    background-color: #980635;
+    width: 100%;
+
+}
+.sec_login #logo{
+    /*width: 30%;*/
+    display: inline-block;
+ vertical-align: bottom;
+    padding: 10px 0 10px 0;
+}
+.connexion{
+    display: inline-block;
+    vertical-align: bottom;
+   float: right;
+    /*margin-top: 5px;*/
+
+}
+/*.connexion span a:hover{
+    color: #fecc6f;
+
+}*/
+.connexion a{
+    background-color: #ffffff;
+    padding: 8px 25px 8px 25px;
+    margin-right: 10px;
+}
+.connexion a:hover{
+    color: #980635;
+    /*font-weight: 400;*/
+}
+.connexion a:last-child{
+    background-color: transparent;
+    color: #ffffff;
+}
+.connexion a:last-child:hover{
+    color: #fecc6f;
+}
+/*filtres*/
+
+.filtres_top{
+    width: 100%;
+    background-color: #fecc6f;
+}
+#form_recherche select#categorie, #quartier{
+    width: 95%;
+    margin: 20px 20px 10px 0;
+    padding: 10px;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    -webkit-border-radius: 0;  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 0;  /* Firefox 1-3.6 */
+    border-radius: 0;  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+}
+
+#form_recherche #search_submit{
+    width: 100%;
+    margin: 20px 20px 20px 0;
+    padding: 10px;
+    border: 0;
+    background-color: #4f021a;
+    color: #ffffff;
+}
+
+.bouton-submit{
+    position: relative;
+}
+.bouton-submit a.fa{
+  position: absolute;
+    margin-left: 35px;
+    margin-top: -60px;
+    font-size: 2rem;
+    color: #eeeeee;
+
+}
+.text_carte_affaires{
+    /*background-color: #e8bb80;*/
+    width: 23%;
+    margin-left: 10px;
+    /*margin: 20px 0 20px 20px;*/
+}
+
+.text_carte_affaires h2{
+    padding-top: 30px;
+    color: #980635;
+    font-weight: 400;
+    font-size: 1rem;
+   /*margin-top: 10px;*/
+    text-align: center;
+    line-height: 1.2em;
+}
+
+
+/*main*/
+main{
+    margin: 20px 0 20px 0;
+}
+.annonces{
+    /*min-height: 30px;*/
+
+}
+
+.publi_annonce{
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.publi_annonce:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+
+}
+
+
+.info_annonce{
+    padding-left: 20px;
+}
+.logo_annonce{
+    /*width: 120px;*/
+}
+.titre_info{
+    /*margin-left: 20px;*/
+    margin-top: 20px;
+    text-align: right;
+}
+p.text_info {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.info_adresse, .carte{
+    margin-top: 10px;
+}
+.carte{
+    width: 40px;
+    margin-right: 5px;
+}
+
+.info_adresse p{
+    font-size: 0.8rem;
+}
+.info_adresse span{
+    font-weight: 400;
+}
+.quartier{
+    font-weight: 400;
+    color: #980635;
+}
+.col_droite{
+    padding-left: 20px;
+
+}
+
+
+/*accordion*/
+
+#container-main{
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+
+.accordion-container {
+    width: 100%;
+    /*margin: 0 0 20px;*/
+    clear:both;
+}
+
+.accordion-titulo {
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    background: #666666;
+    color: #fff;
+    text-decoration: none;
+}
+.accordion-titulo.open {
+    background-color: #4f021a;
+    color: #fff;
+}
+.accordion-titulo:hover {
+    background: #980635;
+}
+
+
+.accordion-titulo span.toggle-icon:before {
+    content:url("../images/arrow_on.png");
+    vertical-align: top;
+}
+
+.accordion-titulo.open span.toggle-icon:before {
+    content:url("../images/arrow_off.png");
+    vertical-align: middle;
+}
+
+.accordion-titulo span.toggle-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+    overflow: auto;
+}
+
+.accordion-content p{
+    margin:0;
+}
+
+@media (max-width: 767px) {
+    .accordion-content {
+        padding: 10px 0;
+    }
+}
+
+/*footer*/
+.logo-footer{
+    padding: 10px 0 10px 0;
+}
+.menu-footer{
+    width: 100%;
+    background-color: #980635;
+}
+.menu-sec{
+    padding: 20px;
+    text-align: center;
+}
+.menu-footer li{
+    display: inline-block;
+    color: #ffffff;
+}
+.menu-footer li a{
+    color: #ffffff;
+    margin-right: 30px;
+    text-align: center;
+    padding: 10px;
+}
+.menu-footer li a:hover{
+    color: #fecc6f;
+}
+.res_sociaux{
+    padding: 20px;
+    text-align: center;
+}
+.res_sociaux .fa{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.res_sociaux .fa:hover{
+    color: #fecc6f;
+}
+
+
+.copyright-footer{
+    background-color: #4f021a;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.7rem;
+}
+/* --------------------------------responsive------------------------------------ */
+
+/*@media 960 ----------------------------------------------------------*/
+@media only screen and (max-width: 960px){
+    #wrapper{
+        background-color: #f5f5f5;
+        width:100%;
+    }
+    .sec_login #logo{
+        width: 30%;
+    }
+
+    /*filtre*/
+    #form_recherche select#categorie, #quartier{
+        width: 95%;
+        margin: 10px 10px 10px 0;
+        padding: 8px;
+    }
+
+    #form_recherche #search_submit{
+        margin: 10px 10px 10px 0;
+        padding: 8px;
+    }
+
+    .bouton-submit a.fa{
+        margin-left: 20px;
+        margin-top: -48px;
+    }
+    .text_carte_affaires{
+        width: 23%;
+        margin-left: 10px;
+    }
+
+    .text_carte_affaires h2{
+        padding-top: 15px;
+        font-size: 1rem;
+    }
+
+    main{
+        margin: 10px 0 10px 0;
+    }
+
+    .publi_annonce{
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .info_annonce{
+        padding-left: 10px;
+    }
+    .logo_annonce{
+        /*width: 90px;*/
+    }
+    .titre_info{
+        margin-top: 0;
+        text-align: right;
+    }
+    .titre_info h1{
+        font-size:1rem ;
+        margin-top: 10px;
+    }
+    p.text_info {
+        margin-top: 5px;
+        font-size: 0.9rem;
+    }
+
+    .info_adresse, .carte{
+        margin-top: 5px;
+    }
+    .carte{
+        width: 30px;
+        margin-right: 5px;
+    }
+
+    .info_adresse p{
+        font-size: 0.8rem;
+    }
+
+    /*footer*/
+    .logo-footer{
+        padding: 0;
+        margin-top: 5px;
+    }
+    .menu-footer{
+        padding: 10px 0 10px 0;
+    }
+    .menu-sec{
+        padding: 0;
+        text-align: center;
+    }
+    .menu-footer li a{
+        margin-right: 40px;
+        padding: 0;
+    }
+    .menu-footer li a:hover{
+        color: #fecc6f;
+    }
+    .res_sociaux{
+        padding: 0;
+    }
+    .res_sociaux .fa{
+        margin-right: 5px;
+    }
+
+
+}
+
+/*@media 768 ----------------------------------------------------------*/
+@media only screen and (max-width: 768px){
+    #wrapper{
+        background-color: cornsilk;
+        width:100%;
+    }
+
+
+}
