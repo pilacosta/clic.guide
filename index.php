@@ -39,7 +39,7 @@ require_once 'views/header.php';
                 <!--fin section categories-->
 
                 <div class="row publi_annonce" onclick="location.href='test.html'">
-                    <div class="col-3">
+                    <div class="col-3 image-annonce">
                         <img src="images/fleuriste.jpg" alt="clic guide fleuriste">
                     </div>
                     <div class="col-9 info_annonce">
@@ -73,7 +73,7 @@ require_once 'views/header.php';
 
 <!--annonce 2-->
                 <div class="row publi_annonce">
-                    <div class="col-3">
+                    <div class="col-3 image-annonce">
                         <img src="images/fleuriste.jpg" alt="clic guide fleuriste">
                     </div>
                     <div class="col-9 info_annonce">
@@ -116,11 +116,13 @@ require_once 'views/header.php';
                 </div>
             </div><!--fin annonces-->
 
-            <div class="col-3 col_droite">
-                <img src="images/pub-google_01.png" alt="">
-                <img src="images/pub-google_02.png" alt="">
+            <div class="col-3 col_droite_pub">
+                <div class="container">
+                    <img src="images/pub-google_01.png" alt="">
+                    <img src="images/pub-google_02.png" alt="">
+                </div><!--fin container-->
             </div><!--fin colonne droite-->
-        </div>
+        </div><!--fin row-->
     </div><!--fin container-->
 
 </main>

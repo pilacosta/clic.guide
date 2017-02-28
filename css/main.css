@@ -1,47 +1,3 @@
-/*reset de Eric Meyer*/
-
-/*html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline; }
-body {
-    line-height: 1; }
-ol, ul {
-    list-style: none; }
-table {
-    border-collapse: collapse;
-    border-spacing: 0; }
-caption, th, td {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: middle; }
-q, blockquote {
-    quotes: none; }
-q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-a img {
-    border: none; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-    display: block; }*/
-
-/*END reset*/
-
 
 *{
     box-sizing: border-box;
@@ -53,6 +9,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 
 html {
     font-size: 16px;
+
 }
 ul, hr, h1, h2, h3, p{
     margin: 0;
@@ -63,9 +20,9 @@ p{
 
 }
 h1{
-    color: #666666;
+    color: #980635;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 img{
@@ -74,7 +31,7 @@ img{
 a{
     text-decoration: none;
     color: black;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-size: 0.7rem;
 }
 hr{
@@ -89,6 +46,8 @@ hr{
     /*border: solid 1px #000000;*/
     font-family: 'Mitr', sans-serif;
     font-weight:300;
+    /*background-color: red;*/
+
 }
 
 
@@ -101,7 +60,7 @@ hr{
 .col-6{width: 50%;}
 .col-7{width: 58.33%;}
 .col-8{width: 66.66%; }
-.col-9{width: 75%;}
+.col-9{width: 75%; }
 .col-10{width: 83.33%;}
 .col-11{width: 91.66%;}
 .col-12{width: 100%;}
@@ -138,6 +97,8 @@ hr{
 /*STYLES POUR TÉLÉPHONES JUSQU'A 768PX INCLUS*/
 @media only screen and (max-width:768px){
 
+
+
     [class*="col-"] {
         width:100%;
     }
@@ -155,7 +116,9 @@ hr{
     display: inline-block;
  vertical-align: bottom;
     padding: 10px 0 10px 0;
+
 }
+
 .connexion{
     display: inline-block;
     vertical-align: bottom;
@@ -163,14 +126,12 @@ hr{
     /*margin-top: 5px;*/
 
 }
-/*.connexion span a:hover{
-    color: #fecc6f;
 
-}*/
 .connexion a{
     background-color: #ffffff;
     padding: 8px 25px 8px 25px;
     margin-right: 10px;
+    text-transform: uppercase;
 }
 .connexion a:hover{
     color: #980635;
@@ -213,12 +174,13 @@ hr{
 
 .bouton-submit{
     position: relative;
+
 }
 .bouton-submit a.fa{
   position: absolute;
     margin-left: 35px;
-    margin-top: -60px;
-    font-size: 2rem;
+    margin-top: -55px;
+    font-size: 1.4rem;
     color: #eeeeee;
 
 }
@@ -295,9 +257,27 @@ p.text_info {
     font-weight: 400;
     color: #980635;
 }
-.col_droite{
-    padding-left: 20px;
 
+.col_droite_pub{
+    padding: 10px 0 10px 20px;
+}
+.col_droite{
+    /*padding-left: 20px;*/
+    background-color: #f1f1f1;
+    padding: 10px 0 10px 20px;
+
+}
+.col_droite p{
+    font-size: 0.7rem;
+}
+.col_droite h2{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.2em;
+}
+.col_droite .info-col-droite{
+    margin-bottom: 10px;
 }
 
 
@@ -414,12 +394,139 @@ p.text_info {
     padding: 10px;
     font-size: 0.7rem;
 }
+
+/*================================================================*/
+/* --------------------------------------------- */
+/* FORMULAIRE CONNEXION */
+
+.section_form{
+    margin-bottom: 30px;
+}
+.form_connexion {
+    margin: auto;
+    text-align: left;
+}
+.form_connexion .form-largueur {
+    padding: 0 15px 0 0;
+    margin-top: 20px;
+}
+
+.form_connexion input {
+    margin-right: 5px;
+    width: 100%;
+    height: 35px;
+}
+.form_connexion .form_bouton input {
+    width: 120px;
+    height: 30px;
+    background-color: #4f021a;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+input[type="submit"] {
+    border: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+;
+}
+label{
+   font-size: 0.8rem;
+}
+
+
+.form_connexion a {
+    text-decoration: none;
+    color: #980635;
+    font-size: 0.6rem;
+
+    /*text-transform: lowercase;*/
+}
+
+#msg_erreur {
+    text-align: center;
+    margin: 50px auto;
+    color: #ac2546;
+}
+/*================================================================*/
+/*form inscription*/
+.subtitres-form h3{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.2em;
+    margin: 30px 0 5px 0;
+}
+.subtitres-form p{
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.2em;
+}
+
+.form_inscripion {
+    margin: auto;
+    text-align: left;
+}
+.form_inscripion .form-largueur {
+    padding: 0 15px 0 0;
+    margin-top: 20px;
+}
+textarea#saisie_description {
+    width: 98%;
+    font-size: 0.7rem;
+    font-weight: 200;
+}
+
+.area-description{
+    margin-top: 20px;
+}
+
+.form_inscripion input {
+    margin-right: 5px;
+    width: 100%;
+    height: 35px;
+    font-size: 0.7rem;
+    font-weight: 200;
+}
+.form_inscripion .form_bouton input {
+    width: 120px;
+    height: 30px;
+    background-color: #4f021a;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+input[type="submit"] {
+    border: none;
+}
+label{
+    font-size: 0.8rem;
+}
+
+.form-annuler a{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #980635;
+    padding-top: 20px;
+    margin-top: 50px;
+}
+.col-10.form-annuler {
+    margin-top: 20px;
+}
+
+#msg_erreur {
+    text-align: center;
+    margin: 50px auto;
+    color: #ac2546;
+}
+
 /* --------------------------------responsive------------------------------------ */
 
 /*@media 960 ----------------------------------------------------------*/
 @media only screen and (max-width: 960px){
     #wrapper{
-        background-color: #f5f5f5;
+        /*background-color: #f5f5f5;*/
         width:100%;
     }
     .sec_login #logo{
@@ -439,8 +546,8 @@ p.text_info {
     }
 
     .bouton-submit a.fa{
-        margin-left: 20px;
-        margin-top: -48px;
+        margin-left: 25px;
+        margin-top: -43px;
     }
     .text_carte_affaires{
         width: 23%;
@@ -523,9 +630,252 @@ p.text_info {
 /*@media 768 ----------------------------------------------------------*/
 @media only screen and (max-width: 768px){
     #wrapper{
-        background-color: cornsilk;
+        /*background-color: cornsilk;*/
         width:100%;
     }
+    .sec_login #logo{
+        display: none;
+    }
+    .sec_login {
+        background-color: #980635;
+        width: 100%;
+        min-height: 50px;
+        background-image: url(../images/g.png);
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: 8% 5%;
+        background-size: 40px;
+    }
+    .connexion{
+        margin-left: 20px;
+    }
+    .connexion a{
+        padding: 8px 15px 8px 15px;
+        margin-right: 0;
+    }
 
+    /*filtres*/
+
+    .filtres_top .container{
+        width: 85%;
+
+    }
+
+    .filtres_top{
+        width: 100%;
+
+        background-color: #fecc6f;
+        padding-top: 5px;
+    }
+
+    #form_recherche select#categorie, #quartier{
+        width: 100%;
+        margin: 5px 0  5px 0;
+        padding: 10px;
+        border: 0;
+    }
+
+    #form_recherche #search_submit{
+        width: 100%;
+
+        margin: 5px 0  5px 0;
+        padding: 10px;
+        border: 0;
+        background-color: #4f021a;
+        color: #ffffff;
+    }
+
+    .bouton-submit{
+        position: relative;
+
+    }
+    .bouton-submit a.fa{
+        position: absolute;
+        margin-left: 35px;
+        margin-top: -45px;
+        font-size: 2rem;
+        color: #eeeeee;
+
+    }
+
+    .text_carte_affaires{
+        display: none;
+    }
+
+    /*main*/
+    main{
+        margin: 10px 0 10px 0;
+    }
+    .annonces{
+        /*min-height: 30px;*/
+    }
+
+    .publi_annonce{
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+    .publi_annonce:hover{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    }
+    .image-annonce img{
+        max-width: 90px;
+        /*display: inline-block;*/
+    }
+
+    .info_annonce{
+        /*padding-left: 20px;*/
+        /*display: inline-block;*/
+        margin-left: 90px;
+        margin-top: -110px;
+    }
+
+
+    .logo_annonce{
+        display: none;
+    }
+    .titre_info{
+        /*margin-left: 20px;*/
+        margin-top: 20px;
+        text-align: left;
+        /*display: inline-block;*/
+    }
+    hr{
+        display: none;
+    }
+    p.text_info {
+        display: none;
+    }
+
+    .info_adresse, .carte{
+        margin-top: 5px;
+    }
+    .carte{
+        width: 25px;
+        /*margin-right: 2px;*/
+    }
+
+    .info_adresse {
+        margin-left:0;
+        margin-top: 5px;
+        width: 220px;
+    }
+    .info_adresse p {
+        font-size: 0.7rem;
+
+    }
+    .info_adresse span{
+        font-weight: 400;
+    }
+    .quartier{
+        font-weight: 400;
+        color: #980635;
+    }
+
+    .fondo-anuncios{
+        background-color: red;
+    }
+
+    /*col droite*/
+    .col_droite_pub{
+        padding: 0;
+        margin: 20px 0 20px 0;
+    }
+
+    .col_droite_pub img{
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    /*footer*/
+
+    /*footer*/
+    .logo-footer{
+        display: none;
+    }
+    .menu-footer{
+        width: 100%;
+        background-color: #980635;
+    }
+    .menu-sec{
+        padding: 20px;
+        text-align: center;
+    }
+    .menu-footer li{
+        display: block;
+        color: #ffffff;
+    }
+    .menu-footer li a{
+        color: #ffffff;
+        margin-right: 30px;
+        text-align: center;
+        padding: 10px;
+    }
+    .menu-footer li a:hover{
+        color: #fecc6f;
+    }
+    .res_sociaux{
+        padding: 20px;
+        text-align: center;
+    }
+    .res_sociaux .fa{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 2rem;
+        display:inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .res_sociaux .fa:hover{
+        color: #fecc6f;
+    }
+
+
+    .copyright-footer{
+        background-color: #4f021a;
+        color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+
+    /*form connexion*/
+
+    .section_form{
+        /*margin-bottom: 0px;*/
+    }
+
+    .form_connexion .container {
+        width: 85%;
+    }
+    .form_connexion .form-largueur {
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    .col_droite .container{
+width: 100%;
+        padding: 0;
+
+    }
+
+    .col_droite{
+
+        /*padding-left: 20px;*/
+        background-color: #f1f1f1;
+        padding: 10px 0 10px 20px;
+
+    }
+    .col_droite p{
+        font-size: 0.6rem;
+    }
+    .col_droite h2{
+        font-size: 0.8rem;
+    }
+    .col_droite .info-col-droite{
+        margin-bottom: 5px;
+    }
 
 }

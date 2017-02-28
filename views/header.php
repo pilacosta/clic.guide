@@ -6,11 +6,14 @@
 <header>
     <div class="sec_login">
         <div class="container">
-            <a href="index.php"><img id="logo" src="images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo"></a>
+<!--            <div class="logo-test">-->
+                <a href="../index.php"><img id="logo" src="images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo"></a>
+<!--            </div>-->
+
 
             <div class="connexion">
-                <a href="">connexion</a>
-                <a href="">inscription</a>
+                <a href="../form-connexion.php">connexion</a>
+                <a href="../form-inscription.php">inscription</a>
                 <a href=""><span>ES</span></a>
             </div>
 
@@ -19,7 +22,7 @@
 
     <div class="filtres_top">
         <div class="container">
-            <div class="row">
+            <div class="row ">
 
                 <form id="form_recherche" method="post" >
 
@@ -33,7 +36,7 @@
                         </select>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-4 ">
                         <select name="quartier" id="quartier">
                             <option value="-1">Choisir...</option>
                             <option value="">Montréal</option>
