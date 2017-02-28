@@ -36,7 +36,7 @@
                         </select>
                     </div>
 
-                    <div class="col-4 ">
+                    <div class="col-4">
                         <select name="quartier" id="quartier">
                             <option value="-1">Choisir...</option>
                             <option value="">Montréal</option>

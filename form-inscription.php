@@ -167,8 +167,8 @@ require_once 'views/page_head.php';
                         <form id="formulaire" action="<?= basename(__FILE__) ?>" method="post">
 
                             <!--nom compagnie ou service-->
-                            <div class="col-6 form-largueur">
-                                <label for="saisie_nom"><span>*</span> Nom : </label>
+                            <div class="col-6  form-largueur">
+                                <label for="saisie_nom"><span>*</span> Nom enterprise ou service : </label>
                                 <input type="text" placeholder="votre nom" id="saisie_nom"
                                        name="saisie_nom" class="<?= $nom_valide ? '' : 'invalid' ?>" value="<?= $nom ?>"/>
                                 <?php if ( ! $nom_valide) { ?>
@@ -177,7 +177,7 @@ require_once 'views/page_head.php';
                             </div>
 
                             <!--mot de passe-->
-                            <div class="col-6 form-largueur">
+                            <div class="col-6  form-largueur">
                                 <label for="saisie_password"><span>*</span> Mot de passe : </label>
                                 <input type="password" placeholder="minimum six caractères" id="saisie_password"
                                        name="saisie_password" class="<?= $password_valide ? '' : 'invalid' ?>" value="<?= $password ?>"/>
@@ -197,7 +197,7 @@ require_once 'views/page_head.php';
                             </div>
 
                             <!--confirmation mot de passe-->
-                            <div class="col-6 form-largueur">
+                            <div class="col-6  form-largueur">
                                 <label for="saisie_password"><span>*</span> Mot de passe : </label>
                                 <input type="password" placeholder="minimum six caractères" id="saisie_password"
                                        name="saisie_password" class="<?= $password_valide ? '' : 'invalid' ?>" value="<?= $password ?>"/>
@@ -205,17 +205,17 @@ require_once 'views/page_head.php';
                                     <p>Le password n'est pas valide. <br>Vous devez écrire au moins six caractères</p>
                                 <?php } ?>
                             </div>
-<div class="row">
-    <div class=" col-12 subtitres-form">
-        <h3 >Mon enterprise ou service</h3>
-        <p>Cette information apparaîtra sur votre profil</p>
-    </div>
-</div>
 
+                            <div class="row">
+                                <div class=" col-12 subtitres-form">
+                                    <h3 >Mon enterprise ou service</h3>
+                                    <p>Cette information apparaîtra sur votre profil</p>
+                                </div>
+                            </div>
 
 
                             <!--courriel (visiteurs contacter)-->
-                            <div class="col-6 form-largueur">
+                            <div class="col-6  form-largueur">
                                 <label for="saisie_email"><span>*</span> Courriel : </label>
                                 <input type="text" placeholder=" exemple@domaine.com" id="saisie_email"
                                        name="saisie_email" class="<?= $email_valide ? '' : 'invalid' ?>" value="<?= $email ?>"/>
@@ -225,7 +225,7 @@ require_once 'views/page_head.php';
                             </div>
 
                             <!--Adresse-->
-                            <div class="col-6 form-largueur">
+                            <div class="col-6  form-largueur">
                                 <label for="saisie_adresse"><span>*</span> Adresse : </label>
                                 <input type="text" placeholder="votre adresse" id="saisie_adresse"
                                        name="saisie_adresse" class="<?= $adresse_valide ? '' : 'invalid' ?>" value="<?= $adresse ?>"/>
@@ -235,7 +235,7 @@ require_once 'views/page_head.php';
                             </div>
 
                             <!--code postal-->
-                            <div class="col-6 form-largueur">
+                            <div class="col-6  form-largueur">
                                 <label for="saisie_cod_postal"><span>*</span> Code postal : </label>
                                 <input type="text" placeholder="h1t 1m4 / H1T 1M4" id="saisie_cod_postal"
                                        name="saisie_cod_postal" class="<?= $cdPostal_valide ? '' : 'invalid' ?>" value="<?= $cdpostal ?>"/>
@@ -258,24 +258,7 @@ require_once 'views/page_head.php';
 
                             <!-- Select liste de categories -->
                             <div class="col-6 form-largueur">
-                                <label for="horaire">Horaire : </label>
-                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="horaire[]" id="horaire" ><!-- multiple="multiple"-->
-                                    <?php foreach ($liste_horaire as $temps) {
-                                        $option_value = retire_accents($temps);
-                                        ?>
-                                        <option value="<?= $option_value ?>"
-                                            <?= array_key_exists('horaire', $_POST) && in_array($option_value,$_POST['horaire']) ? 'selected="selected"' : '' ?>
-                                        ><?= $temps ?></option>
-                                    <?php } ?>
-                                </select>
-                                <?php if ( ! $horaire_valides) { ?>
-                                    <p>Au moins un horaire doit être sélectionné.</p>
-                                <?php } ?>
-                            </div>
-
-                            <!-- Select liste de quartiers -->
-                            <div class="col-6 form-largueur">
-                                <label for="categorie">Horaire : </label>
+                                <label for="categorie">Categorie : </label>
                                 <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="categorie[]" id="categorie" ><!-- multiple="multiple"-->
                                     <?php foreach ($liste_horaire as $temps) {
                                         $option_value = retire_accents($temps);
@@ -290,12 +273,29 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
+                            <!-- Select liste de quartier -->
+                            <div class="col-6 form-largueur">
+                                <label for="quartiers">Quartier : </label>
+                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="quartiers[]" id="quartiers" ><!-- multiple="multiple"-->
+                                    <?php foreach ($liste_horaire as $temps) {
+                                        $option_value = retire_accents($temps);
+                                        ?>
+                                        <option value="<?= $option_value ?>"
+                                            <?= array_key_exists('quartiers', $_POST) && in_array($option_value,$_POST['quartier']) ? 'selected="selected"' : '' ?>
+                                        ><?= $temps ?></option>
+                                    <?php } ?>
+                                </select>
+                                <?php if ( ! $horaire_valides) { ?>
+                                    <p>Au moins un horaire doit être sélectionné.</p>
+                                <?php } ?>
+                            </div>
+
 
 
 
                             <!--    Description d l'emploi -->
                             <div class="row">
-                                <div class="col-12 area-description">
+                                <div class="col-12  area-description">
                                     <label for="saisie_description">Description de service (max 250 mots)</label>
                                     <textarea name="textarea" placeholder="Description..." id="saisie_description"
                                               class="<?= $description_valide ? '' : 'invalid' ?>" rows="5" cols="68" ></textarea>
@@ -309,10 +309,10 @@ require_once 'views/page_head.php';
 
 
                             <div class=" row ">
-                                <div class="col-2 col-m-3 form_bouton">
+                                <div class="col-2 col-m-3  form_bouton">
                                     <input type="submit" name="login" value="Enregistrer">
                                 </div>
-                                <div class="col-10 col-m-9 form-annuler">
+                                <div class="col-10 col-m-9 col-s-8 form-annuler">
                                     <a href="#">Annuler</a>
                                 </div>
                             </div>

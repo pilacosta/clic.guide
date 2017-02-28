@@ -259,7 +259,7 @@ p.text_info {
 }
 
 .col_droite_pub{
-    padding: 10px 0 10px 20px;
+    padding: 0 0 0 20px;
 }
 .col_droite{
     /*padding-left: 20px;*/
@@ -406,6 +406,8 @@ p.text_info {
     margin: auto;
     text-align: left;
 }
+
+
 .form_connexion .form-largueur {
     padding: 0 15px 0 0;
     margin-top: 20px;
@@ -468,6 +470,9 @@ label{
     margin: auto;
     text-align: left;
 }
+.form_inscripion span {
+    color: #fc7474;
+}
 .form_inscripion .form-largueur {
     padding: 0 15px 0 0;
     margin-top: 20px;
@@ -508,19 +513,29 @@ label{
     text-transform: uppercase;
     font-size: 0.8rem;
     color: #980635;
-    padding-top: 20px;
-    margin-top: 50px;
+    /*padding-top: 20px;*/
+    /*margin-top: 50px;*/
 }
 .col-10.form-annuler {
     margin-top: 20px;
 }
 
+.form_inscripion p {
+    color: #fc7474;
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
+
 #msg_erreur {
     text-align: center;
     margin: 50px auto;
-    color: #ac2546;
-}
+    color: #a9c01b;
 
+}
+.invalid {
+    background-color: #fff4f4;
+    padding: 5px;
+}
 /* --------------------------------responsive------------------------------------ */
 
 /*@media 960 ----------------------------------------------------------*/
@@ -781,7 +796,7 @@ label{
     /*col droite*/
     .col_droite_pub{
         padding: 0;
-        margin: 20px 0 20px 0;
+        margin: 10px 0 20px 0;
     }
 
     .col_droite_pub img{
