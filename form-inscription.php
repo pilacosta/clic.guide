@@ -196,15 +196,6 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
-                            <!--confirmation mot de passe-->
-                            <div class="col-6  form-largueur">
-                                <label for="saisie_password"><span>*</span> Mot de passe : </label>
-                                <input type="password" placeholder="minimum six caractères" id="saisie_password"
-                                       name="saisie_password" class="<?= $password_valide ? '' : 'invalid' ?>" value="<?= $password ?>"/>
-                                <?php if ( ! $password_valide) { ?>
-                                    <p>Le password n'est pas valide. <br>Vous devez écrire au moins six caractères</p>
-                                <?php } ?>
-                            </div>
 
                             <div class="row">
                                 <div class=" col-12 subtitres-form">

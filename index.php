@@ -12,40 +12,69 @@ require_once 'views/header.php';
 
         <div class="row">
             <div class="col-9 annonces"><!--annonces-->
-                <!--section categories-->
                 <div id="container-main"><!--accordion-->
 
                     <div class="accordion-container">
                         <a href="#" class="accordion-titulo">Categories<span class="toggle-icon"></span></a>
                         <div class="accordion-content">
-                            <ul>
-                                <li><a href="test.html">Agents immobiliers</a></li>
-                                <li><a href="">Artisanat</a></li>
-                                <li><a href="">avocats</a></li>
-                                <li><a href="">Beauté</a></li>
-                                <li><a href="">Construction et décoration</a></li>
-                                <li><a href="">Divertissement</a></li>
-                                <li><a href="">Écoles</a></li>
-                                <li><a href="">Entretien</a></li>
-                                <li><a href="">Événements</a></li>
-                                <li><a href="">Mécanique automobile</a></li>
-                                <li><a href="">Organizations communautaires</a></li>
-                                <li><a href="">Restaurants</a></li>
-                                <li><a href="">Transport</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+                <!--section categories-->
+                            <div class="row"><!--division en 3-->
+
+                                <div class="col-4">
+                                    <ul>
+                                        <li class="base-cat"><a href="test.html">Agents immobiliers</a></li>
+                                        <li class="base-cat"><a href="">Artistes</a>
+                                            <ul>
+                                                <li class="sub-cat"><a href="">photograpes</li>
+                                                <li class="sub-cat"><a href="">peintres</li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="base-cat"><a href="">Juridique</a></li>
+                                        <li class="base-cat"><a href="">Beauté</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="col-4">
+                                    <li class="sub-cat"><a href="">Construction et décoration</a></li>
+                                    <li class="sub-cat"><a href="">Divertissement</a></li>
+                                    <li class="sub-cat"><a href="">Écoles</a></li>
+                                    <li class="sub-cat"><a href="">Entretien</a></li>
+
+                                </div>
+                                <div class="col-4">
+                                    <li class="sub-cat"><a href="">Événements</a></li>
+                                    <li class="sub-cat"><a href="">Mécanique automobile</a></li>
+                                    <li class="sub-cat"><a href="">Organizations communautaires</a></li>
+                                    <li class="sub-cat"><a href="">Restaurants</a>
+                                        <ul>
+                                            <li class="sub-cat"><a href="">Restaurants asiatiques</li>
+                                            <li class="sub-cat"><a href="">Restaurants asiatiques</li>
+
+                                        </ul>
+                                    </li>
+                                </div>
+
+                            </div><!--fin division 3-->
+
+                        </div><!--fin accordion-content-->
+                    </div><!--fin accordion-container-->
                 </div><!--fin accordion-->
+
                 <!--fin section categories-->
+
+
+                <!--annonces-->
 
                 <div class="row publi_annonce" onclick="location.href='test.html'">
                     <div class="col-3 image-annonce">
-                        <img src="images/fleuriste.jpg" alt="clic guide fleuriste">
+                        <img src="images/restaurant-asiatique-08.jpg" alt="clic guide fleuriste">
                     </div>
                     <div class="col-9 info_annonce">
                         <div class="row">
                             <div class="col-3 logo_annonce">
-                                <img src="images/logo_fleuriste.jpg" alt="">
+                                <img src="images/restaurant-a-logo-01.jpg" alt="">
                             </div>
                             <div class="col-9 titre_info">
                                 <h1>Fleuriste</h1>
@@ -87,8 +116,8 @@ require_once 'views/header.php';
                             <hr class="col-12 separeteur">
                         </div>
 
-                        <p class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla hendrerit leo. Donec finibus augue ut urn. </p>
+                        <p class="text_info">J'offre mes services : à la réalisation de vidéo corporatives,
+                            télévisuelles et évenementielles etc, la réalisation et d'événements (mariage, maternité, ...</p>
 
                         <div class="row">
                             <div class="col-1 col-m-2 carte">
@@ -126,6 +155,8 @@ require_once 'views/header.php';
     </div><!--fin container-->
 
 </main>
+
+
 
 
 <?php
