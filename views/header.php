@@ -6,10 +6,13 @@
 <header>
     <div class="sec_login">
         <div class="container">
-<!--            <div class="logo-test">-->
-                <a href="../index.php"><img id="logo" src="images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo"></a>
-<!--            </div>-->
+            <div class="logo-xl-sm">
 
+                <a href="../index.php">
+                    <img id="logo" src="../images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo">
+                    <img id="logo-small" src="../images/g.png" alt="">
+                </a>
+            </div>
 
             <div class="connexion">
                 <a href="../form-connexion.php">connexion</a>
