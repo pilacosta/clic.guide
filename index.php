@@ -77,7 +77,7 @@ require_once 'views/header.php';
                                 <img src="images/artistes-logo-p-09.png" alt="">
                             </div>
                             <div class="col-8 titre_info">
-                                <a href=""><h1>Chantal Mathieu photographe</h1></a>
+                                <a href="detail.php"><h1>Chantal Mathieu photographe</h1></a>
                             </div>
 
                         </div>

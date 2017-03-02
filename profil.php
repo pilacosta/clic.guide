@@ -19,14 +19,15 @@ require_once 'views/header.php';
                                 lacinia eu ante quis, fringilla hendrerit leo. Donec finibus augue ut urn. </p>
                         </div>
 
-
+                        <hr class="col-12">
+                        
                         <div class="profil-base">
-                            <div class="col-6 profil-gouche">
+                            <div class="col-6 col-m-6 profil-gouche">
                                 <h1>Chantal Mathieu photographe</h1>
                                 <p>Rossemont</p>
                             </div>
 
-                            <div class="col-6 profil-droite">
+                            <div class="col-6 col-m-6 profil-droite">
                                 <a href="" class="bouton-ajouter">Ajouter un logo</a>
                                 <p>chantal@gmail.com</p>
                             </div>
@@ -38,10 +39,10 @@ require_once 'views/header.php';
                                 <div class="col-12 ajout-image">
                                     <a href="" class="bouton">Ajouter une image</a>
                                 </div>
-                                <div class="col-4 ">
+                                <div class="col-4 col-m-3">
                                     <img src="images/artistes-art-05.jpg" alt="">
                                 </div>
-                                <div class="col-8 mod-image">
+                                <div class="col-8 col-m-9 mod-image">
                                     <a href="" class="bouton-mod">Modifier</a>
                                     <a href="" class="bouton-sup">Supprimer</a>
                                 </div>

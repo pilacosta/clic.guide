@@ -545,6 +545,45 @@ a.bouton-sup{
     padding: 8px 15px 8px 5px;
 }
 
+/*oage detail*/
+.detail-bg{
+    /*background-color: #ac2546;*/
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);*/
+    margin: 5px 0 10px 0;
+    border-top: solid 1px  #c0c0c0;
+    padding-top: 10px;
+
+}
+.retour-detail a{
+    /*margin: 20px 0 0 20px;*/
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #4f021a;
+}
+.retour-detail a:hover{
+color: #980635;
+
+}
+.gouche-detail .info-detail{
+    margin: 20px 0 20px 0;
+
+
+}
+.detail-nom span{
+    font-weight: 400;
+}
+.col_droite_detail{
+    /*background-color: #f1f17a;*/
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.col_droite_detail p{
+    color: #980635;
+    margin: 20px 0 20px 0;
+
+}
+
 
 /* --------------------------------responsive------------------------------------ */
 
@@ -910,5 +949,73 @@ a.bouton-sup{
     }
     .col_droite .info-col-droite{
         margin-bottom: 5px;
+    }
+
+    /* --------------------------------profil------------------------------------ */
+    .profil-base{
+        margin: 10px 0 20px 0;
+    }
+    .profil-gouche {
+       /*margin: 20px;*/
+    }
+    .profil-gouche h1{
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .profil-droite{
+        text-align: left;
+        width: 100%;
+        /*background-color: red;*/
+        margin-top: 20px;
+
+    }
+    .profil-droite p{
+        margin: 20px 0 20px 0;
+        text-align: left;
+    }
+    .profil-droite a{
+        background-color: #4f021a;
+        text-transform: uppercase;
+        padding: 8px 15px 8px 15px;
+        width: 100%;
+        color: #ffffff;
+
+    }
+
+    .ajout-image{
+        margin: 10px 0 10px 0;
+
+    }
+    .ajout-image a{
+        background-color: #4f021a;
+        text-transform: uppercase;
+        padding: 8px 15px 8px 15px;
+        /*width: 300px;*/
+        color: #ffffff;
+    }
+    .ajout-image a:hover{
+        background-color: #980635;
+
+    }
+    .col-8.mod-image {
+        margin: 20px;
+        width: 60%;
+    }
+    a.bouton-mod {
+        background-color: #4f021a;
+        padding: 8px 15px 8px 15px;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    a.bouton-mod:hover {
+        background-color: #980635;
+    }
+    a.bouton-sup{
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: #980635;
+        padding: 8px 15px 8px 5px;
     }
 }
