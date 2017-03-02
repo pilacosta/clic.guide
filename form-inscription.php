@@ -164,7 +164,8 @@ require_once 'views/page_head.php';
 
                     <div class="container">
                         <h1>Inscrire mon enterprise ou service</h1>
-                        <form id="formulaire" action="<?= basename(__FILE__) ?>" method="post">
+                        <form id="formulaire" action="profil.php" method="post">
+<!--                        <form id="formulaire" action="--><?//= basename(__FILE__) ?><!--" method="post">-->
 
                             <!--nom compagnie ou service-->
                             <div class="col-6  form-largueur">
@@ -283,7 +284,6 @@ require_once 'views/page_head.php';
 
 
 
-
                             <!--    Description d l'emploi -->
                             <div class="row">
                                 <div class="col-12  area-description">
@@ -304,7 +304,7 @@ require_once 'views/page_head.php';
                                     <input type="submit" name="login" value="Enregistrer">
                                 </div>
                                 <div class="col-10 col-m-9 col-s-8 form-annuler">
-                                    <a href="#">Annuler</a>
+                                    <a href="profil.php">Annuler</a>
                                 </div>
                             </div>
 

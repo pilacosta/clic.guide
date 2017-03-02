@@ -17,7 +17,7 @@ p{
 h1{
     color: #980635;
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 img{
     max-width: 100%;
@@ -29,6 +29,9 @@ a{
     font-size: 0.7rem;
 }
 hr{
+    height: 1px;
+    border: 0;
+    background-color: #c0c0c0;
 }
 .container{
     width: 95%;
@@ -190,22 +193,33 @@ main{
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
+
+
 .publi_annonce:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+.entete-annonce{
+    margin: 5px 0 10px 0;
+}
+.logo_annonce{
+    /*margin: 5px 0 5px 0;*/
 }
 .info_annonce{
     padding-left: 20px;
 }
 .titre_info{
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     text-align: right;
 }
+.titre_info h1:hover{
+    color: #4f021a;
+}
 p.text_info {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1rem;
 }
 .info_adresse, .carte{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .carte{
     width: 40px;
@@ -466,6 +480,72 @@ label{
     background-color: #fff4f4;
     padding: 5px;
 }
+
+/* --------------------------------profil------------------------------------ */
+.profil-base{
+    margin: 30px 0 20px 0;
+}
+.profil-gouche h1{
+font-size: 1rem;
+    color: #333;
+}
+
+.profil-droite{
+    text-align: right;
+
+}
+.profil-droite p{
+    margin: 20px 0 20px 0;
+    text-align: right;
+}
+.profil-droite a{
+    background-color: #4f021a;
+    text-transform: uppercase;
+    padding: 8px 15px 8px 15px;
+    width: 300px;
+    color: #ffffff;
+
+}
+.profil-droite a:hover{
+    background-color: #980635;
+}
+.ajout-image{
+    margin: 20px 0 20px 0;
+
+}
+.ajout-image a{
+    background-color: #4f021a;
+    text-transform: uppercase;
+    padding: 8px 15px 8px 15px;
+    width: 300px;
+    color: #ffffff;
+}
+.ajout-image a:hover{
+    background-color: #980635;
+
+}
+.col-8.mod-image {
+    margin: 20px;
+    width: 60%;
+}
+a.bouton-mod {
+    background-color: #4f021a;
+    padding: 8px 15px 8px 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+a.bouton-mod:hover {
+    background-color: #980635;
+}
+a.bouton-sup{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #980635;
+    padding: 8px 15px 8px 5px;
+}
+
+
 /* --------------------------------responsive------------------------------------ */
 
 /*@media 960 ----------------------------------------------------------*/
@@ -506,6 +586,15 @@ label{
         font-size: 1rem;
     }
 
+
+
+
+
+
+
+
+
+
     main{
         margin: 10px 0 10px 0;
     }
@@ -514,11 +603,16 @@ label{
         padding: 10px;
         margin-bottom: 15px;
     }
+
+    .entete-annonce{
+        margin: 5px 0 5px 0;
+    }
+
     .info_annonce{
         padding-left: 10px;
     }
     .logo_annonce{
-        /*width: 90px;*/
+
     }
     .titre_info{
         margin-top: 0;
@@ -528,8 +622,9 @@ label{
         font-size:1rem ;
         margin-top: 10px;
     }
+
     p.text_info {
-        margin-top: 5px;
+        margin-top: 15px;
         font-size: 0.9rem;
     }
 
@@ -539,6 +634,7 @@ label{
     .carte{
         width: 30px;
         margin-right: 5px;
+        margin-top: 10px;
     }
 
     .info_adresse p{
@@ -597,7 +693,7 @@ label{
     }
     .logo-xl-sm #logo-small{
         width: 40px;
-        margin : 10px 0 5px 10px;
+        margin : 10px 0 5px 15px;
         visibility: visible;
     }
 
@@ -605,7 +701,7 @@ label{
         margin-left: 20px;
     }
     .connexion a{
-        padding: 8px 15px 8px 15px;
+        padding: 8px 10px 8px 10px;
         margin-right: 0;
     }
 
@@ -676,7 +772,10 @@ label{
         margin-left: 90px;
         margin-top: -110px;
     }
-
+    .titre_info h1{
+        font-size:0.8rem ;
+        /*margin-top: 10px;*/
+    }
 
     .logo_annonce{
         display: none;

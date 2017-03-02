@@ -67,21 +67,21 @@ require_once 'views/header.php';
 
                 <!--annonces-->
 
-                <div class="row publi_annonce" onclick="location.href='test.html'">
+                <div class="row publi_annonce" ><!--onclick="location.href='test.html'"-->
                     <div class="col-3 image-annonce">
-                        <img src="images/restaurant-asiatique-08.jpg" alt="clic guide fleuriste">
+                        <img src="images/artistes-photo-06.jpg" alt="clic guide fleuriste">
                     </div>
                     <div class="col-9 info_annonce">
-                        <div class="row">
-                            <div class="col-3 logo_annonce">
-                                <img src="images/restaurant-a-logo-01.jpg" alt="">
+                        <div class="row entete-annonce">
+                            <div class="col-4 logo_annonce">
+                                <img src="images/artistes-logo-p-09.png" alt="">
                             </div>
-                            <div class="col-9 titre_info">
-                                <h1>Fleuriste</h1>
+                            <div class="col-8 titre_info">
+                                <a href=""><h1>Chantal Mathieu photographe</h1></a>
                             </div>
-                            <hr class="col-12">
-                        </div>
 
+                        </div>
+                        <hr class="col-12">
                         <p class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
                             lacinia eu ante quis, fringilla hendrerit leo. Donec finibus augue ut urn. </p>
 
@@ -91,7 +91,7 @@ require_once 'views/header.php';
 
                                 </div>
                                 <div class="col-11 col-m-10 info_adresse">
-                                    <p><span>Quartier :</span>  <span class="quartier">Anjou</span>
+                                    <p><span class="quartier">Anjou</span>
                                     2569 D Jean-Talon Est
                                         <p>H2A 1T8 Montreal, Québec</p>
                                         <p><span>Tel.:</span> 514 723 0688</p>
