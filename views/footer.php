@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2 col-m-2 logo-footer">
-                    <a href="index.php"><img id="logo" src="images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo"></a>
+                    <a href="index.php"><img id="logo" src="../upload_images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo"></a>
                 </div>
                 <div class="col-7 col-m-7 menu-sec">
                     <ul>

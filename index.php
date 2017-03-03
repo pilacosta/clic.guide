@@ -1,6 +1,18 @@
 <?php
 require_once 'views/page_head.php';
 require_once 'views/header.php';
+//require_once 'db/db_access.php';
+//
+//define('ARTICLE_IMG_PATH', 'upload_images/');
+//define('CAT_ID','catid');
+
+//var_dump();
+
+// Chargement des articles
+//$services = get_services();
+
+//var_dump(clic-guide-montreal);
+
 ?>
 
 
@@ -64,17 +76,20 @@ require_once 'views/header.php';
 
                 <!--fin section categories-->
 
+<div>
+
 
                 <!--annonces-->
+<!--    --><?php //foreach ($services as $id => $profil) { ?>
 
                 <div class="row publi_annonce" ><!--onclick="location.href='test.html'"-->
                     <div class="col-3 image-annonce">
-                        <img src="images/artistes-photo-06.jpg" alt="clic guide fleuriste">
+                        <img src="upload_images/artistes-photo-06.jpg" alt="clic guide fleuriste">
                     </div>
                     <div class="col-9 info_annonce">
                         <div class="row entete-annonce">
                             <div class="col-4 logo_annonce">
-                                <img src="images/artistes-logo-p-09.png" alt="">
+                                <img src="upload_images/artistes-logo-p-09.png" alt="">
                             </div>
                             <div class="col-8 titre_info">
                                 <a href="detail.php"><h1>Chantal Mathieu photographe</h1></a>
@@ -100,38 +115,14 @@ require_once 'views/header.php';
                     </div>
                 </div><!--fin publi_annonce-->
 
+<!--    --><?php //} ?>
+
+</div>
 <!--annonce 2-->
-                <div class="row publi_annonce">
-                    <div class="col-3 image-annonce">
-                        <img src="images/fleuriste.jpg" alt="clic guide fleuriste">
-                    </div>
-                    <div class="col-9 info_annonce">
-                        <div class="row">
-                            <div class="col-3 logo_annonce">
-                                <img src="images/logo_fleuriste2.jpg" alt="">
-                            </div>
-                            <div class="col-9 titre_info">
-                                <h1>Photographie</h1>
-                            </div>
-                            <hr class="col-12 separeteur">
-                        </div>
 
-                        <p class="text_info">J'offre mes services : à la réalisation de vidéo corporatives,
-                            télévisuelles et évenementielles etc, la réalisation et d'événements (mariage, maternité, ...</p>
 
-                        <div class="row">
-                            <div class="col-1 col-m-2 carte">
-                                <img src="images/position-annonce.png" alt="position annonces clic guide montreal">
-                            </div>
-                            <div class="col-11 col-m-10 info_adresse">
-                                <p><span>Quartier :</span>  <span class="quartier">Anjou</span>
-                                    2569 D Jean-Talon Est
-                                <p>H2A 1T8 Montreal, Québec</p>
-                                <p><span>Tel.:</span> 514 723 0688</p>
-                            </div><!--fin adresse-->
-                        </div>
-                    </div>
-                </div><!--fin publi_annonce-->
+
+
 
 <!--ennumeration-->
                 <div class="navigation_cat">
@@ -147,8 +138,8 @@ require_once 'views/header.php';
 
             <div class="col-3 col_droite_pub">
                 <div class="container">
-                    <img src="images/pub-google_01.png" alt="">
-                    <img src="images/pub-google_02.png" alt="">
+                    <img src="upload_images/pub-google_01.png" alt="">
+                    <img src="upload_images/pub-google_02.png" alt="">
                 </div><!--fin container-->
             </div><!--fin colonne droite-->
         </div><!--fin row-->

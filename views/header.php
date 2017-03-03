@@ -9,8 +9,8 @@
             <div class="logo-xl-sm">
 
                 <a href="../index.php">
-                    <img id="logo" src="../images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo">
-                    <img id="logo-small" src="../images/g.png" alt="">
+                    <img id="logo" src="../upload_images/clip-guide-montreal-logo280px.png" alt="clic guide montreal logo">
+                    <img id="logo-small" src="../upload_images/g.png" alt="">
                 </a>
             </div>
 
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-1 bouton-submit">
                         <input type="submit" name="search" id="search_submit" value="">
-                        <div><a href="" class="fa fa-search"></a></div>
+                        <div><a href="../test-form-inscription.php" class="fa fa-search"></a></div>
 
                     </div>
                     <div class="col-3 text_carte_affaires">

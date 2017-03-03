@@ -44,6 +44,30 @@ require_once 'views/header.php';
 
 
 
+
+                <!---->
+                <div id="msg_erreur">
+                    <!-- messages d'erreur si mail et password non reconnus -->
+                    <?php if (is_logged_in()) {  ?>
+
+                        <p>vous êtes connecté</p>
+                    <?php } else if (!empty($_POST)) { ?>
+                        <p>Courriel et/ou mot de passe non reconnu(s)</p>
+                    <?php } ?>
+
+                    <!-- messages d'erreur si mail et password pas au bon format -->
+                    <?php if (!$username_valide && !empty($_POST)) { ?>
+                        <p>Format de courriel non valide</p>
+                    <?php } ?>
+
+                    <?php if (!$password_valide && !empty($_POST)) { ?>
+                        <p>Le mot de passe doit contenir au moins 6 caractères</p>
+                    <?php } ?>
+                </div>
+                <!---->
+
+
+
             </div><!--fin annonces-->
 
             <div class="col-3  col_droite">

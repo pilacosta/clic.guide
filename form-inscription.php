@@ -13,7 +13,6 @@ require_once 'views/header.php';
 
 //var_dump($_POST);
 
-$liste_horaire = array('Choisir...', 'Temps partiel', 'Temps plein', 'Occasionnel', 'Le matin', 'Après midi');
 
 
 function retire_accents($str) {
@@ -134,15 +133,16 @@ if ($en_reception && empty($description)) {
 
 
 if ($en_reception && $nom_valide
+    && $prenom_valide
     && $email_valide
     && $telephone_valide
     && $adresse_valide
     && $cdPostal_valide
     && $password_valide
     && $horaire_valides
+    && $calendrier_valide
     && $description_valide) {
     // Les données de formulaire sont valides
-
     header('Location:index.php');
     exit;
 }
@@ -164,8 +164,8 @@ require_once 'views/page_head.php';
 
                     <div class="container">
                         <h1>Inscrire mon enterprise ou service</h1>
-                        <form id="formulaire" action="profil.php" method="post">
-<!--                        <form id="formulaire" action="--><?//= basename(__FILE__) ?><!--" method="post">-->
+<!--                        <form id="formulaire" action="profil.php" method="post">-->
+                        <form id="formulaire" action="<?= basename(__FILE__) ?>" method="post">
 
                             <!--nom compagnie ou service-->
                             <div class="col-6  form-largueur">
@@ -294,6 +294,19 @@ require_once 'views/page_head.php';
                                         <p>Vous devez écrire une description</p>
                                     <?php } ?>
                                 </div>
+
+<!--test-->
+                                <!--    Description d l'emploi -->
+                                <div>
+                                    <label for="saisie_description">Description de l'emploi</label>
+                                    <textarea name="textarea" placeholder="Description..." id="saisie_description"
+                                              class="<?= $description_valide ? '' : 'invalid' ?>" rows="5" cols="68" ></textarea>
+                                    <?php if ( $description_valide) { ?>
+                                        <p>Vous devez écrire une description</p>
+                                    <?php } ?>
+                                </div>
+
+
 
                             </div>
 
