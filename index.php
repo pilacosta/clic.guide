@@ -1,7 +1,8 @@
 <?php
+require_once  'defines.php';
+require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
-//require_once 'db/db_access.php';
 //
 //define('ARTICLE_IMG_PATH', 'upload_images/');
 //define('CAT_ID','catid');
@@ -9,9 +10,9 @@ require_once 'views/header.php';
 //var_dump();
 
 // Chargement des articles
-//$services = get_services();
+$services = get_services('LIMIT 3');
 
-//var_dump(clic-guide-montreal);
+//var_dump();
 
 ?>
 
@@ -30,42 +31,76 @@ require_once 'views/header.php';
                         <a href="#" class="accordion-titulo">Categories<span class="toggle-icon"></span></a>
                         <div class="accordion-content">
 
-                <!--section categories-->
+                            <!--section categories-->
                             <div class="row"><!--division en 3-->
 
-                                <div class="col-4">
-                                    <ul>
-                                        <li class="base-cat"><a href="test.html">Agents immobiliers</a></li>
-                                        <li class="base-cat"><a href="">Artistes</a>
-                                            <ul>
-                                                <li class="sub-cat"><a href="">photograpes</li>
-                                                <li class="sub-cat"><a href="">peintres</li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="base-cat"><a href="">Juridique</a></li>
-                                        <li class="base-cat"><a href="">Beauté</a></li>
-                                    </ul>
-
-                                </div>
-                                <div class="col-4">
-                                    <li class="sub-cat"><a href="">Construction et décoration</a></li>
-                                    <li class="sub-cat"><a href="">Divertissement</a></li>
-                                    <li class="sub-cat"><a href="">Écoles</a></li>
-                                    <li class="sub-cat"><a href="">Entretien</a></li>
+                                <div class="col-4 col-m-4 mi-menu">
+                                    <div class="cat-ser">
+                                        <p><a href="" class="cat-link">Agents immobiliers</a></p>
+                                        <p> <a href="" class="cat-sublink">Agents vcbgfhfh</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Artistes</a></p>
+                                        <p><a href="" class="cat-sublink">Photograpes</a></p>
+                                        <p><a href="" class="cat-sublink">Peintres</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p><a href="" class="cat-link">Juridique</a></p>
+                                        <p><a href="" class="cat-sublink">Juridique hhdsdhd</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p><a href="" class="cat-link">Beauté</a></p>
+                                        <p><a href="" class="cat-sublink">Beauté jjere</a></p>
+                                    </div>
 
                                 </div>
-                                <div class="col-4">
-                                    <li class="sub-cat"><a href="">Événements</a></li>
-                                    <li class="sub-cat"><a href="">Mécanique automobile</a></li>
-                                    <li class="sub-cat"><a href="">Organizations communautaires</a></li>
-                                    <li class="sub-cat"><a href="">Restaurants</a>
-                                        <ul>
-                                            <li class="sub-cat"><a href="">Restaurants asiatiques</li>
-                                            <li class="sub-cat"><a href="">Restaurants asiatiques</li>
+                                <div class="col-4 col-m-4">
 
-                                        </ul>
-                                    </li>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Construction et décoration</a></p>
+                                        <p><a href="" class="cat-sublink">Construction</a></p>
+                                        <p><a href="" class="cat-sublink">Décoration</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Divertissement</a></p>
+                                        <p> <a href="" class="cat-sublink">Photograpes</a></p>
+                                        <p><a href="" class="cat-sublink">Peintres</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Écoles</a></p>
+                                        <p> <a href="" class="cat-sublink">Musique</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Entretien</a></p>
+                                        <p><a href="" class="cat-sublink">Maison</a></p>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-4 col-m-4">
+
+                                    <div class="cat-ser">
+                                        <p><a href="" class="cat-link">Événements</a></p>
+                                        <p><a href="" class="cat-sublink">Construction</a></p>
+                                        <p><a href="" class="cat-sublink">Décoration</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Mécanique automobile</a></p>
+                                        <p><a href="" class="cat-sublink">Photograpes</a></p>
+                                        <p><a href="" class="cat-sublink">Peintres</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p><a href="" class="cat-link">Organizations communautaires</a></p>
+                                        <p><a href="" class="cat-sublink">Musique</a></p>
+                                    </div>
+                                    <div class="cat-ser">
+                                        <p> <a href="" class="cat-link">Restaurants</a></p>
+                                        <p> <a href="" class="cat-sublink">Asiatiques</a></p>
+                                        <p> <a href="" class="cat-sublink">Italiens</a></p>
+                                        <p><a href="" class="cat-sublink">Mexicains</a></p>
+                                    </div>
+
                                 </div>
 
                             </div><!--fin division 3-->
@@ -80,42 +115,46 @@ require_once 'views/header.php';
 
 
                 <!--annonces-->
-<!--    --><?php //foreach ($services as $id => $profil) { ?>
+    <?php foreach ($services as $profil) { ?>
 
                 <div class="row publi_annonce" ><!--onclick="location.href='test.html'"-->
                     <div class="col-3 image-annonce">
-                        <img src="upload_images/artistes-photo-06.jpg" alt="clic guide fleuriste">
+                        <img src="<?= ARTICLE_IMG_PATH . $profil['photo'] ?>" alt="photo <?= $profil['nom'] ?>">
+<!--                       <img src="upload_images/artistes-photo-06.jpg" alt="clic guide fleuriste">-->
                     </div>
                     <div class="col-9 info_annonce">
                         <div class="row entete-annonce">
                             <div class="col-4 logo_annonce">
-                                <img src="upload_images/artistes-logo-p-09.png" alt="">
+                                <img src="<?= ARTICLE_IMG_PATH . $profil['logo'] ?>" alt="photo <?= $profil['nom'] ?>">
+<!--                                <img src="upload_images/artistes-logo-p-09.png" alt="">-->
                             </div>
                             <div class="col-8 titre_info">
-                                <a href="detail.php"><h1>Chantal Mathieu photographe</h1></a>
+                                <a href="detail.php"><h1><?= $profil['titre'] ?></h1></a>
+<!--                                <a href="detail.php"><h1>Chantal Mathieu photographe</h1></a>-->
                             </div>
 
                         </div>
                         <hr class="col-12">
-                        <p class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla hendrerit leo. Donec finibus augue ut urn. </p>
+                        <p class="text_info"><?= utf8_encode($profil['infoSmall'])?></p>
+
 
                             <div class="row">
                                 <div class="col-1 col-m-2 carte">
-                                    <img src="images/position-annonce.png" alt="position annonces clic guide montreal">
+                                    <img src="upload_images/position-annonce.png" alt="position annonces clic guide montreal">
 
                                 </div>
                                 <div class="col-11 col-m-10 info_adresse">
-                                    <p><span class="quartier">Anjou</span>
-                                    2569 D Jean-Talon Est
-                                        <p>H2A 1T8 Montreal, Québec</p>
-                                        <p><span>Tel.:</span> 514 723 0688</p>
+                                    <p><span class="quartier"><?= $profil['quartier'] ?></span>
+                                        <?= utf8_encode($profil['adresse']) ?>
+                                        <p><?= $profil['codepostal'] ?> Montréal, Québec</p>
+                                        <p><span>Tel.: </span><?= $profil['telephone'] ?></p>
+
                                 </div><!--fin adresse-->
                             </div>
                     </div>
                 </div><!--fin publi_annonce-->
 
-<!--    --><?php //} ?>
+    <?php } ?>
 
 </div>
 <!--annonce 2-->

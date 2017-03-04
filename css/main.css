@@ -183,7 +183,8 @@ hr{
     text-align: center;
     line-height: 1.2em;
 }
-/*main*/
+/* --------------------------------main------------------------------------ */
+
 main{
     margin: 20px 0 20px 0;
 }
@@ -193,7 +194,6 @@ main{
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
-
 
 .publi_annonce:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
@@ -255,7 +255,7 @@ p.text_info {
     margin-bottom: 10px;
 }
 
-/*accordion*/
+/* --------------------------------accordion------------------------------------ */
 
 #container-main{
     background-color: #f1f1f1;
@@ -283,11 +283,11 @@ p.text_info {
     background: #980635;
 }
 .accordion-titulo span.toggle-icon:before {
-    content:url("../upload_images/arrow_on.png");
+    content:url("../upload_images/arrow_off.png");
     vertical-align: top;
 }
 .accordion-titulo.open span.toggle-icon:before {
-    content:url("../upload_images/arrow_off.png");
+    content:url("../upload_images/arrow_on.png");
     vertical-align: middle;
 }
 .accordion-titulo span.toggle-icon {
@@ -310,7 +310,40 @@ p.text_info {
     }
 }
 
-/*footer*/
+/*liste categories*/
+.cat-ser {
+    width: 100%;
+    /*font-size: 0.9rem;*/
+    /*padding-right: 15px;*/
+    /*display: inline;*/
+    /*float: left;*/
+    text-align: left;
+    margin-bottom: 10px;
+}
+.cat-link{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #980635;
+    text-decoration: none;
+}
+.cat-sublink{
+    font-size: 0.8rem;
+    /*line-height: 0.5rem;*/
+    color: #666;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.cat-link:hover{
+    color: #4f021a;
+}
+.cat-sublink:hover{
+    color: #980635;
+}
+
+/* --------------------------------footer------------------------------------ */
+
+
 .logo-footer{
     padding: 10px 0 10px 0;
 }
@@ -350,7 +383,6 @@ p.text_info {
     color: #fecc6f;
 }
 
-
 .copyright-footer{
     background-color: #4f021a;
     color: #f1f1f1;
@@ -359,7 +391,7 @@ p.text_info {
     font-size: 0.7rem;
 }
 
-/* ------------------ form connexion--------------------------- */
+/* ----------------------------------- form connexion--------------------------- */
 
 .section_form{
     margin-bottom: 30px;
@@ -482,9 +514,6 @@ label{
 }
 
 
-
-
-
 /* --------------------------------profil------------------------------------ */
 .profil-base{
     margin: 30px 0 20px 0;
@@ -548,8 +577,8 @@ a.bouton-sup{
     color: #980635;
     padding: 8px 15px 8px 5px;
 }
+/* -------------------------------- detail------------------------------------ */
 
-/*oage detail*/
 .detail-bg{
     /*background-color: #ac2546;*/
     /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);*/
@@ -557,6 +586,10 @@ a.bouton-sup{
     border-top: solid 1px  #c0c0c0;
     padding-top: 10px;
 
+}
+
+.ajout-image{
+    text-align: center;
 }
 .retour-detail a{
     /*margin: 20px 0 0 20px;*/
@@ -630,14 +663,7 @@ color: #980635;
     }
 
 
-
-
-
-
-
-
-
-
+    /* --------------------------------responsive main------------------------------------ */
     main{
         margin: 10px 0 10px 0;
     }
