@@ -1,6 +1,19 @@
 <?php
+require_once  'defines.php';
+require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
+
+
+$id = $_GET['id'];
+$user = get_user_by_id($id);
+//var_dump($user);
+
+//var_dump();
+
+/*$user_mail = get_user_by_mail($username);
+var_dump($user_mail);*/
+
 ?>
 
 
@@ -10,26 +23,31 @@ require_once 'views/header.php';
 
         <div class="row">
             <div class="col-9">
+
+               <!-- --><?php /*foreach ($user_mail as $profil) { */?>
                 <div class="row">
 
-                    <div class="container">
-                        <div>
-                            <h1>Bienvenue sur clic.guide.montreal</h1>
+                    <div class="container-prof">
+                        <div class="bg-bienvenue" >
+                            <h1>Bienvenue sur <span>clic.guide.montreal</span></h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
                                 lacinia eu ante quis, fringilla hendrerit leo. Donec finibus augue ut urn. </p>
                         </div>
 
                         <hr class="col-12">
-                        
+                        <div class="mod-profil">
+                            <p><a href="form-inscription.php">Modifier mon profil</a></p>
+                        </div>
                         <div class="profil-base">
                             <div class="col-6 col-m-6 profil-gouche">
-                                <h1>Chantal Mathieu photographe</h1>
-                                <p>Rossemont</p>
+                                <h1><?= utf8_encode($user['titre']) ?></h1>
+                                <p><?= $user['quartier'] ?></p>
+
                             </div>
 
                             <div class="col-6 col-m-6 profil-droite">
                                 <a href="" class="bouton-ajouter">Ajouter un logo</a>
-                                <p>chantal@gmail.com</p>
+                                <p><?= $user['courriel'] ?></p>
                             </div>
                         </div>
                         <hr class="col-12">
@@ -39,20 +57,23 @@ require_once 'views/header.php';
                                 <div class="col-12 ajout-image">
                                     <a href="" class="bouton">Ajouter une image</a>
                                 </div>
-                                <div class="col-4 col-m-3">
-                                    <img src="images/artistes-art-05.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-4 col-m-3 upload-image">
+                                        <!--                                    <img src="--><?//= ARTICLE_IMG_PATH . $user['photo'] ?><!--" alt="photo --><?//= $user['titre'] ?><!--">-->
+                                    </div>
+                                    <div class="col-8 col-m-9 mod-image">
+                                        <a href="" class="bouton-mod">Modifier</a>
+                                        <a href="" class="bouton-sup">Supprimer</a>
+                                    </div>
                                 </div>
-                                <div class="col-8 col-m-9 mod-image">
-                                    <a href="" class="bouton-mod">Modifier</a>
-                                    <a href="" class="bouton-sup">Supprimer</a>
-                                </div>
+
                             </div>
 
                     </div><!--fin container-->
 
                 </div>
 
-
+               <!-- --><?php /*} */?>
 
             </div><!--fin annonces-->
 

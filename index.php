@@ -10,9 +10,9 @@ require_once 'views/header.php';
 //var_dump();
 
 // Chargement des articles
-$services = get_services('LIMIT 3');
+$services = get_services('LIMIT 10');
 
-//var_dump();
+//var_dump($services);
 
 ?>
 
@@ -24,8 +24,8 @@ $services = get_services('LIMIT 3');
     <div class="container">
 
         <div class="row">
-            <div class="col-9 annonces"><!--annonces-->
-                <div id="container-main"><!--accordion-->
+            <div class="col-9 col-m-9 annonces"><!--annonces-->
+                <div class="container-main"><!--accordion-->
 
                     <div class="accordion-container">
                         <a href="#" class="accordion-titulo">Categories<span class="toggle-icon"></span></a>
@@ -119,33 +119,35 @@ $services = get_services('LIMIT 3');
 
                 <div class="row publi_annonce" ><!--onclick="location.href='test.html'"-->
                     <div class="col-3 image-annonce">
-                        <img src="<?= ARTICLE_IMG_PATH . $profil['photo'] ?>" alt="photo <?= $profil['nom'] ?>">
+                        <img src="<?= ARTICLE_IMG_PATH . $profil['photo'] ?>" alt="photo <?= $profil['titre'] ?>">
 <!--                       <img src="upload_images/artistes-photo-06.jpg" alt="clic guide fleuriste">-->
                     </div>
-                    <div class="col-9 info_annonce">
+                    <div class="col-9 col-m-9 info_annonce">
                         <div class="row entete-annonce">
                             <div class="col-4 logo_annonce">
-                                <img src="<?= ARTICLE_IMG_PATH . $profil['logo'] ?>" alt="photo <?= $profil['nom'] ?>">
+                                <img src="<?= ARTICLE_IMG_PATH . $profil['logo'] ?>" alt="photo <?= $profil['titre'] ?>">
 <!--                                <img src="upload_images/artistes-logo-p-09.png" alt="">-->
                             </div>
                             <div class="col-8 titre_info">
-                                <a href="detail.php"><h1><?= $profil['titre'] ?></h1></a>
-<!--                                <a href="detail.php"><h1>Chantal Mathieu photographe</h1></a>-->
+                                <a href="detail.php?titre=<?= $profil['titre'] ?>"><h1><?= utf8_encode($profil['titre']) ?></h1></a>
+
                             </div>
+
+
 
                         </div>
                         <hr class="col-12">
                         <p class="text_info"><?= utf8_encode($profil['infoSmall'])?></p>
 
 
-                            <div class="row">
+                            <div class="row div-adresse">
                                 <div class="col-1 col-m-2 carte">
                                     <img src="upload_images/position-annonce.png" alt="position annonces clic guide montreal">
 
                                 </div>
                                 <div class="col-11 col-m-10 info_adresse">
-                                    <p><span class="quartier"><?= $profil['quartier'] ?></span>
-                                        <?= utf8_encode($profil['adresse']) ?>
+                                    <p><span class="quartier"><?= utf8_encode($profil['quartier']) ?></span>
+                                    <p><?= utf8_encode($profil['adresse']) ?></p>
                                         <p><?= $profil['codepostal'] ?> Montréal, Québec</p>
                                         <p><span>Tel.: </span><?= $profil['telephone'] ?></p>
 
@@ -166,8 +168,8 @@ $services = get_services('LIMIT 3');
 <!--ennumeration-->
                 <div class="navigation_cat">
                     <a href="#" class="prev_pag"><</a>
-                    <a href="#" class="pag_selecteur current">1</a>
-                    <a href="#" class="pag_selecteur">2</a>
+                    <a href="detail_test.php" class="pag_selecteur current">1</a>
+                    <a href="profil.php" class="pag_selecteur">2</a>
                     <a href="#" class="pag_selecteur">3</a>
                     <a href="#" class="pag_selecteur">4</a>
                     <a href="#" class="pag_selecteur">5</a>

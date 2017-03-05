@@ -59,7 +59,37 @@ function get_services($where = '') {
 //    var_dump($data);
 
     return $data;
+}
 
+// Requete : sélectionner 1 user par son id
+function get_user_by_id($id) {
+    global $mysqli;
+    $query_str = 'SELECT * FROM `service` ORDER BY `service`.`id`' . $id;
+
+
+    $res = $mysqli->query($query_str);  // execution de la requete
+
+    // chargement des données de la ligne
+    $data = array();
+    if ($res && ($res->num_rows > 0)) {
+        $data = $res->fetch_assoc();
+    }
+    return $data;
+}
+
+//login
+// Requete : sélectionner 1 user par son mail
+function get_user_by_mail($mail) {
+    global $mysqli;
+    $query_str = 'SELECT * FROM `users` WHERE email="' . $mail . '"';
+    $res = $mysqli->query($query_str);  // execution de la requete
+
+    // chargement des données de la ligne
+    $data = array();
+    if ($res && ($res->num_rows > 0)) {
+        $data = $res->fetch_assoc();
+    }
+    return $data;
 }
 
 

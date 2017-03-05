@@ -44,13 +44,13 @@ hr{
 /* -------------------------SYSTEME DE GRILLES ------------------------*/
 .col-1{width: 8.33%;}
 .col-2{width: 16.66%;}
-.col-3{width: 25%; /*background-color: #980635*/}
+.col-3{width: 25%; /*background-color: cornsilk;*/}
 .col-4{width: 33.33%; }
 .col-5{width: 41.66%;}
 .col-6{width: 50%;}
 .col-7{width: 58.33%;}
 .col-8{width: 66.66%; }
-.col-9{width: 75%; }
+.col-9{width: 75%; /*background-color: #a9c01b;*/}
 .col-10{width: 83.33%;}
 .col-11{width: 91.66%;}
 .col-12{width: 100%;}
@@ -77,7 +77,7 @@ hr{
     .col-m-6 {width: 50%;}
     .col-m-7 {width: 58.33%;}
     .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%;}
+    .col-m-9 {width: 75%; /*background-color: red;*/}
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
@@ -199,7 +199,7 @@ main{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 .entete-annonce{
-    margin: 5px 0 10px 0;
+    /*margin: 5px 0 10px 0;*/
 }
 .logo_annonce{
     /*margin: 5px 0 5px 0;*/
@@ -215,11 +215,14 @@ main{
     color: #4f021a;
 }
 p.text_info {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 1rem;
 }
+.div-adresse{
+    margin-top: 10px;
+}
 .info_adresse, .carte{
-    margin-top: 20px;
+    /*margin-top: 10px;*/
 }
 .carte{
     width: 40px;
@@ -240,7 +243,8 @@ p.text_info {
 }
 .col_droite{
     background-color: #f1f1f1;
-    padding: 10px 0 10px 20px;
+    padding: 10px 0 10px 5px;
+    /*margin-left: 5px;*/
 }
 .col_droite p{
     font-size: 0.7rem;
@@ -257,7 +261,7 @@ p.text_info {
 
 /* --------------------------------accordion------------------------------------ */
 
-#container-main{
+.container-main{
     background-color: #f1f1f1;
     margin-bottom: 10px;
 }
@@ -515,6 +519,28 @@ label{
 
 
 /* --------------------------------profil------------------------------------ */
+.container-prof{
+    margin: 0 20px 0 0;
+}
+.bg-bienvenue{
+    background-color: #eeeeee;
+    padding: 20px;
+}
+.bg-bienvenue span{
+    color: #4f021a;
+}
+.mod-profil{
+    margin: 10px 0 10px 0;
+}
+.mod-profil a{
+    color: #980635;
+    font-size: 0.9rem;
+}
+.upload-image{
+    background-color: silver;
+    width: 200px;
+    height: 170px;
+}
 .profil-base{
     margin: 30px 0 20px 0;
 }
@@ -587,10 +613,14 @@ a.bouton-sup{
     padding-top: 10px;
 
 }
+.detail-annonce{
+    padding: 10px;
+}
 
 .ajout-image{
     text-align: center;
 }
+
 .retour-detail a{
     /*margin: 20px 0 0 20px;*/
     padding: 15px;
@@ -606,21 +636,49 @@ color: #980635;
 
 
 }
+.detail-nom{
+    margin-bottom: 10px;
+}
 .detail-nom span{
     font-weight: 400;
 }
 .col_droite_detail{
     /*background-color: #f1f17a;*/
-    padding: 10px 0 10px 0;
+    padding: 20px ;
+    /*text-align: left;*/
+}
+.logo-detail{
     text-align: center;
 }
 
-.col_droite_detail p{
-    color: #980635;
-    margin: 20px 0 20px 0;
+.adresse-detail{
+    margin: 10px 0 10px 0;
 
 }
+.adresse-detail p{
+    color: #980635;
+    font-size: 0.9rem;
+    display: block;
+    /*margin: 20px 0 20px 0;*/
 
+}
+.col_droite_detail .carte{
+    /*margin-left: 20px;*/
+}
+.adresse-detail{
+    display: block;
+    /*display: inline-block;*/
+
+}
+.carte{
+    display: block;
+    /*display: inline-block;*/
+    /*vertical-align: top;*/
+    /*margin-top: 200px;*/
+    /*margin-right: -500px;*/
+
+
+}
 
 /* --------------------------------responsive------------------------------------ */
 
@@ -698,7 +756,7 @@ color: #980635;
     }
 
     .info_adresse, .carte{
-        margin-top: 5px;
+        /*margin-top: 5px;*/
     }
     .carte{
         width: 30px;
@@ -850,7 +908,7 @@ color: #980635;
         display: none;
     }
     .titre_info{
-        margin-top: 20px;
+        margin-top: 15px;
         text-align: left;
     }
     hr{
@@ -859,17 +917,20 @@ color: #980635;
     p.text_info {
         display: none;
     }
+    .div-adresse{
+        margin-top: 5px;
+    }
 
     .info_adresse, .carte{
-        margin-top: 5px;
+        /*margin-top: 1px;*/
     }
     .carte{
         width: 25px;
     }
 
     .info_adresse {
-        margin-left:0;
-        margin-top: 5px;
+        margin-left:5px;
+        /*margin-top: 1px;*/
         width: 220px;
     }
     .info_adresse p {

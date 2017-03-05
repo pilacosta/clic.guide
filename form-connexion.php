@@ -1,11 +1,15 @@
 <?php
+
+require_once 'check_connect.php';
+
 require_once 'views/page_head.php';
 require_once 'views/header.php';
+
+// POURQUOI REDETRUIRE LA SESSION ICI?
+$_SESSION = array();
+session_destroy();
+
 ?>
-
-
-
-
 
 <main>
 
@@ -17,11 +21,12 @@ require_once 'views/header.php';
 
                     <div class="container">
                         <h1>Ouvrir une session</h1>
+
                         <form action="<?= basename(__FILE__) ?>" method="post">
                             <div class="col-6 form-largueur">
-                                <label for="mail">Adresse courriel</label>
-                                <input type="text" name="mail" id="mail" placeholder="" class="<?= $username_valide ? '' : 'invalid' ?>"
-                                       value="<?= array_key_exists('mail', $_POST) ? $_POST['mail'] : '' ?>"/>
+                                <label for="email">Adresse courriel</label>
+                                <input type="text" name="email" id="email" placeholder="" class="<?= $username_valide ? '' : 'invalid' ?>"
+                                       value="<?= array_key_exists('email', $_POST) ? $_POST['email'] : '' ?>"/>
                             </div>
                             <div class="col-6 form-largueur">
                                 <label for="password ">Mot de passe</label>
@@ -35,9 +40,31 @@ require_once 'views/header.php';
                                     <a href="#">Oublié votre mot de passe?</a>
                                 </div>
                             </div>
-
-
                         </form>
+
+
+
+                        <div id="msg_erreur">
+                            <!-- messages d'erreur si mail et password non reconnus -->
+                            <?php if (is_logged_in()) {  ?>
+
+                                <p>vous êtes connecté</p>
+                                <a href="">Deconnexion</a>
+                            <?php } else if (!empty($_POST)) { ?>
+                                <p>Courriel et/ou mot de passe non reconnu(s)</p>
+                            <?php } ?>
+
+                            <!-- messages d'erreur si mail et password pas au bon format -->
+                            <?php if (!$username_valide && !empty($_POST)) { ?>
+                                <p>Format de courriel non valide</p>
+                            <?php } ?>
+
+                            <?php if (!$password_valide && !empty($_POST)) { ?>
+                                <p>Le mot de passe doit contenir au moins 6 caractères</p>
+                            <?php } ?>
+                        </div>
+
+
                     </div><!--fin container-->
 
                 </div>
@@ -45,26 +72,7 @@ require_once 'views/header.php';
 
 
 
-                <!---->
-                <div id="msg_erreur">
-                    <!-- messages d'erreur si mail et password non reconnus -->
-                    <?php if (is_logged_in()) {  ?>
 
-                        <p>vous êtes connecté</p>
-                    <?php } else if (!empty($_POST)) { ?>
-                        <p>Courriel et/ou mot de passe non reconnu(s)</p>
-                    <?php } ?>
-
-                    <!-- messages d'erreur si mail et password pas au bon format -->
-                    <?php if (!$username_valide && !empty($_POST)) { ?>
-                        <p>Format de courriel non valide</p>
-                    <?php } ?>
-
-                    <?php if (!$password_valide && !empty($_POST)) { ?>
-                        <p>Le mot de passe doit contenir au moins 6 caractères</p>
-                    <?php } ?>
-                </div>
-                <!---->
 
 
 

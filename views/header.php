@@ -1,5 +1,6 @@
 <?php
 //var_dump($page_title);
+//require '../check_connect.php';
 
 ?>
 
@@ -14,11 +15,29 @@
                 </a>
             </div>
 
-            <div class="connexion">
+
+         <div class="connexion">
                 <a href="../form-connexion.php">connexion</a>
                 <a href="../form-inscription.php">inscription</a>
                 <a href=""><span>ES</span></a>
             </div>
+
+
+<!--            test-->
+           <!-- <div id="connexion">
+                <?php /*if(is_logged_in()) { */?>
+                    <a href="#">mon compte</a>
+                    <form action="../index.php" method="post">
+                        <input type="submit" name="deconnect" value="deconnexion">
+                    </form>
+                <?php /*} else { */?>
+                    <a href="../form-connexion.php">connexion</a>
+                    <a href="../form-inscription.php">inscription</a>
+                <?php /*} */?>
+            </div>-->
+
+
+<!--            fin test-->
 
         </div>
     </div><!--fin container-->
