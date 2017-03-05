@@ -38,6 +38,8 @@ var_dump($user_mail);*/
                         <div class="mod-profil">
                             <p><a href="form-inscription.php">Modifier mon profil</a></p>
                         </div>
+
+
                         <div class="profil-base">
                             <div class="col-6 col-m-6 profil-gouche">
                                 <h1><?= utf8_encode($user['titre']) ?></h1>
@@ -50,24 +52,31 @@ var_dump($user_mail);*/
                                 <p><?= $user['courriel'] ?></p>
                             </div>
                         </div>
+
+
                         <hr class="col-12">
 
                         <!--    Ajout image -->
-                            <div class="row">
-                                <div class="col-12 ajout-image">
+
+<!--                            <div class="row ">-->
+                                <div class=" ajout-image-btn">
                                     <a href="" class="bouton">Ajouter une image</a>
                                 </div>
-                                <div class="row">
-                                    <div class="col-4 col-m-3 upload-image">
-                                        <!--                                    <img src="--><?//= ARTICLE_IMG_PATH . $user['photo'] ?><!--" alt="photo --><?//= $user['titre'] ?><!--">-->
-                                    </div>
-                                    <div class="col-8 col-m-9 mod-image">
-                                        <a href="" class="bouton-mod">Modifier</a>
-                                        <a href="" class="bouton-sup">Supprimer</a>
-                                    </div>
-                                </div>
 
+
+<!--                            </div>-->
+
+                            <div class="row sec-upload-img">
+                                <div class="col-4 col-m-2 upload-image">
+                                    <!--                                    <img src="--><?//= ARTICLE_IMG_PATH . $user['photo'] ?><!--" alt="photo --><?//= $user['titre'] ?><!--">-->
+                                </div>
+                                <div class="col-8 col-m-10 mod-image">
+                                    <a href="" class="bouton-mod">Modifier</a>
+                                    <a href="" class="bouton-sup">Supprimer</a>
+                                </div>
                             </div>
+
+
 
                     </div><!--fin container-->
 
@@ -77,23 +86,9 @@ var_dump($user_mail);*/
 
             </div><!--fin annonces-->
 
-            <div class="col-3  col_droite">
-                <div class="container">
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
-
-                </div><!--fin container-->
-            </div><!--fin colonne droite-->
+            <?php
+            require_once 'views/col-droite.php';
+            ?>
         </div><!--fin row-->
     </div><!--fin container-->
 

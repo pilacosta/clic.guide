@@ -72,29 +72,11 @@ session_destroy();
 
 
 
-
-
-
-
             </div><!--fin annonces-->
 
-            <div class="col-3  col_droite">
-                <div class="container">
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
-
-                </div><!--fin container-->
-            </div><!--fin colonne droite-->
+            <?php
+            require_once 'views/col-droite.php';
+            ?>
         </div><!--fin row-->
     </div><!--fin container-->
 

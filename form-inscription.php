@@ -1,7 +1,27 @@
 <?php
+require_once  'defines.php';
+require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
+
+$id = $_GET['id'];
+$categories = get_user_by_cat($id);
+//var_dump($categories);
+
+$id = $_GET['$id'];
+$quartiers = get_user_by_quartier($id)  ;
+var_dump($quartiers);
+
+//$qua = $_GET['quartier'];
+//$quartiers = get_last_3users() ;
+//var_dump($quartiers);
+
+
+
 ?>
+
+
+
 
 <?php
 //$page_title = 'formulaire inscription';
@@ -75,15 +95,22 @@ if (array_key_exists('saisie_email', $_POST)) {
 
 
 // Réception service categorie
-$horaire_valides = true;
-$temps = array(); // categorie sélectionné par l'utilisateur
-if (array_key_exists('horaire', $_POST)) {
-    $temps = $_POST['horaire'];
+$categories_valides = true;
+$cat = array(); // categorie sélectionné par l'utilisateur
+if (array_key_exists('categorie', $_POST)) {
+    $cat = $_POST['categorie'];
 }
 // Categorie est valide si on est affichage initial ou bien si on a au moins un item sélectionné
-if ($en_reception && empty($temps)) {
-    $horaire_valides = false;
+if ($en_reception && empty($cat)) {
+    $categories_valides = false;
 }
+
+
+
+
+
+
+
 
 // Réception service quartier
 $horaire_valides = true;
@@ -169,7 +196,7 @@ require_once 'views/page_head.php';
 
                             <!--nom compagnie ou service-->
                             <div class="col-6  form-largueur">
-                                <label for="saisie_nom"><span>*</span> Nom enterprise ou service : </label>
+                                <label for="saisie_nom"><span>*</span> Nom enterprise ou service : <?= $cat['nom'] ?></label>
                                 <input type="text" placeholder="votre nom" id="saisie_nom"
                                        name="saisie_nom" class="<?= $nom_valide ? '' : 'invalid' ?>" value="<?= $nom ?>"/>
                                 <?php if ( ! $nom_valide) { ?>
@@ -251,30 +278,36 @@ require_once 'views/page_head.php';
                             <!-- Select liste de categories -->
                             <div class="col-6 form-largueur">
                                 <label for="categorie">Categorie : </label>
-                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="categorie[]" id="categorie" ><!-- multiple="multiple"-->
-                                    <?php foreach ($liste_horaire as $temps) {
-                                        $option_value = retire_accents($temps);
+                                <select class="<?= $categories_valides ? '' : 'invalid' ?>" name="categorie[]" id="categorie" ><!-- multiple="multiple"-->
+                                    <?php foreach ($categories as $cat) {
+                                        $option_value = retire_accents($cat);
                                         ?>
                                         <option value="<?= $option_value ?>"
                                             <?= array_key_exists('categorie', $_POST) && in_array($option_value,$_POST['categorie']) ? 'selected="selected"' : '' ?>
-                                        ><?= $temps ?></option>
+                                        ><?= $cat ?></option>
+
                                     <?php } ?>
                                 </select>
-                                <?php if ( ! $horaire_valides) { ?>
+                                <?php if ( ! $categories_valides) { ?>
                                     <p>Au moins un horaire doit être sélectionné.</p>
                                 <?php } ?>
                             </div>
 
+
+
+
+
+
                             <!-- Select liste de quartier -->
                             <div class="col-6 form-largueur">
-                                <label for="quartiers">Quartier : </label>
-                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="quartiers[]" id="quartiers" ><!-- multiple="multiple"-->
-                                    <?php foreach ($liste_horaire as $temps) {
-                                        $option_value = retire_accents($temps);
+                                <label for="quartier">Quartier : </label>
+                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="quartier[]" id="quartier" ><!-- multiple="multiple"-->
+                                    <?php foreach ($quartiers as $quartier) {
+                                        $option_value = retire_accents($quartier);
                                         ?>
                                         <option value="<?= $option_value ?>"
-                                            <?= array_key_exists('quartiers', $_POST) && in_array($option_value,$_POST['quartier']) ? 'selected="selected"' : '' ?>
-                                        ><?= $temps ?></option>
+                                            <?= array_key_exists('$quartier', $_POST) && in_array($option_value,$_POST['$quartier']) ? 'selected="selected"' : '' ?>
+                                        ><?= $quartier ?></option>
                                     <?php } ?>
                                 </select>
                                 <?php if ( ! $horaire_valides) { ?>
@@ -295,16 +328,7 @@ require_once 'views/page_head.php';
                                     <?php } ?>
                                 </div>
 
-<!--test-->
-                                <!--    Description d l'emploi -->
-                                <div>
-                                    <label for="saisie_description">Description de l'emploi</label>
-                                    <textarea name="textarea" placeholder="Description..." id="saisie_description"
-                                              class="<?= $description_valide ? '' : 'invalid' ?>" rows="5" cols="68" ></textarea>
-                                    <?php if ( $description_valide) { ?>
-                                        <p>Vous devez écrire une description</p>
-                                    <?php } ?>
-                                </div>
+
 
 
 
@@ -312,11 +336,11 @@ require_once 'views/page_head.php';
 
 
 
-                            <div class=" row ">
+                            <div class=" row sec-enregistrer">
                                 <div class="col-2 col-m-3  form_bouton">
                                     <input type="submit" name="login" value="Enregistrer">
                                 </div>
-                                <div class="col-10 col-m-9 col-s-8 form-annuler">
+                                <div class="col-10 col-m-9 form-annuler">
                                     <a href="profil.php">Annuler</a>
                                 </div>
                             </div>
@@ -330,24 +354,11 @@ require_once 'views/page_head.php';
 
 
             </div><!--fin annonces-->
+            <?php
+            require_once 'views/col-droite.php';
+            ?>
 
-            <div class="col-3  col_droite">
-                <div class="container">
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
-                    <div class="info-col-droite">
-                        <h2>Instruction pour annoncer</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci risus,
-                            lacinia eu ante quis, fringilla</p>
-                    </div>
 
-                </div><!--fin container-->
-            </div><!--fin colonne droite-->
         </div><!--fin row-->
     </div><!--fin container-->
 
