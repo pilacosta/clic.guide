@@ -296,8 +296,6 @@ require_once 'views/page_head.php';
 
 
 
-
-
                             <!-- Select liste de quartier -->
                             <div class="col-6 form-largueur">
                                 <label for="quartier">Quartier : </label>
@@ -327,11 +325,6 @@ require_once 'views/page_head.php';
                                         <p>Vous devez écrire une description</p>
                                     <?php } ?>
                                 </div>
-
-
-
-
-
                             </div>
 
 

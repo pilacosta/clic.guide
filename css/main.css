@@ -141,9 +141,9 @@ hr{
     width: 100%;
     background-color: #fecc6f;
 }
-#form_recherche select#categorie, #quartier{
+#form_recherche select#categorie, select#quartier{
     width: 95%;
-    margin: 20px 20px 10px 0;
+    margin: 20px 20px 20px 0;
     padding: 10px;
     border: 0;
     -webkit-appearance: none;
@@ -153,6 +153,7 @@ hr{
     -moz-border-radius: 0;  /* Firefox 1-3.6 */
     border-radius: 0;  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
 }
+
 #form_recherche #search_submit{
     width: 100%;
     margin: 20px 20px 20px 0;
@@ -349,7 +350,7 @@ p.text_info {
 
 
 .logo-footer{
-    padding: 10px 0 10px 0;
+    padding: 23px 0 10px 0;
 }
 .menu-footer{
     width: 100%;
@@ -436,7 +437,7 @@ label{
 }
 #msg_erreur {
     text-align: center;
-    margin: 50px auto;
+    margin: 10px auto;
     color: #ac2546;
 }
 /* ------------------ form inscription --------------------------- */
@@ -495,7 +496,20 @@ label{
     font-size: 0.8rem;
 }
 
-.form_inscripion select#categorie, #quartier{
+.form_inscripion select#categorie{
+    width: 100%;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    border: solid 1px #c0c0c0;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    -webkit-border-radius: 0;  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 0;  /* Firefox 1-3.6 */
+    border-radius: 0;  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+}
+
+.form_inscripion select#quartier{
     width: 100%;
     margin: 5px 10px 5px 0;
     padding: 10px;
@@ -524,7 +538,8 @@ label{
 #msg_erreur {
     text-align: center;
     margin: 50px auto;
-    color: #a9c01b;
+    font-size: 0.7rem;
+    color: #fc7474;
 }
 .invalid {
     background-color: #fff4f4;
@@ -567,8 +582,17 @@ font-size: 1rem;
     padding: 10px 0 10px 0;
     /*margin-left: 5px;*/
 }
-.col_droite-profil p{
+.col_droite-profil p, ul{
     font-size: 0.7rem;
+    line-height: 1.2em;
+    margin: 5px 0 5px 0;
+}
+
+.col_droite-profil ul{
+    font-size: 0.7rem;
+}
+.col_droite-profil ul{
+    margin-left: 30px;
 }
 .col_droite-profil h2{
     font-size: 0.9rem;
@@ -731,6 +755,23 @@ html, body {
     padding: 0;
 }
 
+/* -------------------------------- a prpos------------------------------------ */
+.info-a-propos{
+    padding: 0 30px 0 30px ;
+}
+.info-a-propos p, ul{
+    font-size: 0.9rem;
+}
+.info-a-propos ul{
+    margin-left: 40px;
+}
+.info-a-propos h2{
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+
+
 /* --------------------------------responsive------------------------------------ */
 
 /*@media 960 ----------------------------------------------------------*/
@@ -746,15 +787,21 @@ html, body {
     }
 
     /*filtre*/
-    #form_recherche select#categorie, #quartier{
+    #form_recherche select#categorie{
         width: 95%;
         margin: 10px 10px 10px 0;
-        padding: 8px;
+        /*padding: 8px;*/
+    }
+
+    #form_recherche select#quartier{
+        width: 95%;
+        margin: 10px 10px 10px 0;
+        /*padding: 8px;*/
     }
 
     #form_recherche #search_submit{
         margin: 10px 10px 10px 0;
-        padding: 8px;
+        /*padding: 8px;*/
     }
 
     .bouton-submit a.fa{
@@ -906,16 +953,23 @@ html, body {
         padding-top: 5px;
     }
 
-    #form_recherche select#categorie, #quartier{
+    #form_recherche select#categorie{
         width: 100%;
-        margin: 5px 0  5px 0;
-        padding: 10px;
+        margin: 0 0  5px 0;
+        padding: 8px;
+        border: 0;
+    }
+
+    #form_recherche select#quartier{
+        width: 100%;
+        margin: 0 0  5px 0;
+        padding: 8px;
         border: 0;
     }
 
     #form_recherche #search_submit{
         width: 100%;
-        margin: 5px 0  5px 0;
+        margin: 0 0  5px 0;
         padding: 10px;
         border: 0;
         background-color: #4f021a;
@@ -929,7 +983,7 @@ html, body {
     .bouton-submit a.fa{
         position: absolute;
         margin-left: 35px;
-        margin-top: -45px;
+        margin-top: -42px;
         font-size: 2rem;
         color: #eeeeee;
 
@@ -1120,11 +1174,6 @@ width: 20%;
         margin-left: 130px;
     }
 
-    .form_inscripion select#categorie, #quartier{
-
-        border: solid 1px #c0c0c0;
-
-    }
     /* --------------------------------profil------------------------------------ */
     .bg-bienvenue{
         padding: 10px;

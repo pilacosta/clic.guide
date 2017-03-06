@@ -49,6 +49,10 @@ var_dump($user_mail);*/
 
                             <div class="col-6 col-m-6 profil-droite">
                                 <a href="" class="bouton-ajouter">Ajouter un logo</a>
+                                <form action="">
+                                    <label for="images-up" required="required">Image (format JPEG ou PNG)</label>
+                                    <input id="" type="file" name="images-up">
+                                </form>
                                 <p><?= $user['courriel'] ?></p>
                             </div>
                         </div>
@@ -62,6 +66,10 @@ var_dump($user_mail);*/
                                 <div class=" ajout-image-btn">
                                     <a href="" class="bouton">Ajouter une image</a>
                                 </div>
+                        <form action="">
+                            <label for="images-up" required="required">Image (format JPEG ou PNG)</label>
+                            <input id="" type="file" name="images-up">
+                        </form>
 
 
 <!--                            </div>-->

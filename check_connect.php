@@ -18,9 +18,6 @@ function is_logged_in() {
     return (array_key_exists(PS_EMAIL, $_SESSION) && (!empty($_SESSION[PS_EMAIL])));
 }
 
-
-
-
 $username = '';
 $username_valide = true;
 $password = '';
