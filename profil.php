@@ -62,21 +62,58 @@ var_dump($user_mail);*/
 
                         <!--    Ajout image -->
 
+
+                        <form enctype="multipart/form-data" action="" method="POST">
+
+                            <input name="uploadedfile" type="file">
+                            <input type="submit" value="Ajouter une image">
+                        </form>
+                        <div class="text-img-upload">
+                            <p>Image (format JPEG ou PNG)</p>
+                        </div>
+                        <?php
+                        $uploadedfileload="true";
+                        $uploadedfile_size=$_FILES['uploadedfile'][size];
+                        echo $_FILES[uploadedfile][name];
+                        if ($_FILES[uploadedfile][size]>200000)
+                        {$msg=$msg."Le fichier est supérieure à 200 KB, vous devez le réduire avant de télécharger<BR>";
+                            $uploadedfileload="false";}
+
+                        /*if (!($_FILES[uploadedfile][type] =="image/pjpeg" OR $_FILES[uploadedfile][type] =="image/gif" OR $_FILES[uploadedfile][type] =="image/png"))
+                        {$msg=$msg." Tu archivo tiene que ser JPG o GIF. Otros archivos no son permitidos<BR>";
+                        $uploadedfileload="false";}*/
+
+                        $file_name=$_FILES[uploadedfile][name];
+                        $add="uploads/$file_name";
+
+                        if($uploadedfileload=="true"){
+
+                            if(move_uploaded_file ($_FILES[uploadedfile][tmp_name], $add)){
+                                echo " Image téléchargée avec succès";
+                            }else{echo "Télécharger le fichier";}
+
+                        }else{echo $msg;}
+                        ?>
+
+
+
 <!--                            <div class="row ">-->
-                                <div class=" ajout-image-btn">
+                                <!--<div class=" ajout-image-btn">
                                     <a href="" class="bouton">Ajouter une image</a>
-                                </div>
-                        <form action="">
+                                </div>-->
+                        <!--<form action="">
                             <label for="images-up" required="required">Image (format JPEG ou PNG)</label>
                             <input id="" type="file" name="images-up">
-                        </form>
+                        </form>-->
 
 
 <!--                            </div>-->
 
                             <div class="row sec-upload-img">
                                 <div class="col-4 col-m-2 upload-image">
-                                    <!--                                    <img src="--><?//= ARTICLE_IMG_PATH . $user['photo'] ?><!--" alt="photo --><?//= $user['titre'] ?><!--">-->
+                                    <?php
+                                    echo "<img src='uploads/$file_name' >";
+                                    ?>
                                 </div>
                                 <div class="col-8 col-m-10 mod-image">
                                     <a href="" class="bouton-mod">Modifier</a>

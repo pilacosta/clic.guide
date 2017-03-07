@@ -664,6 +664,11 @@ a.bouton-sup{
     color: #980635;
     padding: 8px 15px 8px 5px;
 }
+
+.text-img-upload {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+}
 /* -------------------------------- detail------------------------------------ */
 
 .detail-bg{

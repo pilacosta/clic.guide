@@ -13,7 +13,7 @@
                     <ul>
                         <li><a href="../a_propos.php">À PROPOS</a></li>
                         <li><a href="#">CONDITIONDS D’UTILISATION</a></li>
-                        <li><a href="#">PLAN DU SITE</a></li>
+                        <li><a href="../upload1.php">PLAN DU SITE</a></li>
                     </ul>
                 </div>
 
