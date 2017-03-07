@@ -12,8 +12,8 @@
                 <div class="col-7 col-m-7 menu-sec">
                     <ul>
                         <li><a href="../a_propos.php">À PROPOS</a></li>
-                        <li><a href="">CONDITIONDS D’UTILISATION</a></li>
-                        <li><a href="">PLAN DU SITE</a></li>
+                        <li><a href="#">CONDITIONDS D’UTILISATION</a></li>
+                        <li><a href="#">PLAN DU SITE</a></li>
                     </ul>
                 </div>
 

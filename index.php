@@ -4,29 +4,42 @@ require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
 
+$quartiers = get_quartier();
+$catagories = get_categorie();
+
+//Recuperation parametres de requete
+//
+$catid ='';
+if(array_key_exists('catid', $_REQUEST)){
+    $catid = $_REQUEST['catid'];
+}
+var_dump('catid=',$catid);
+
+$quartierid ='';
+if (array_key_exists('quartier', $_REQUEST) && ($_REQUEST['quartier'] != -1)) {
+    $quartierid = $_REQUEST['quartier'];
+}
 // Chargement des articles
 $where = '';
-$where = "where categorie_id=2";
+if ( ! empty($catid)) {
+    $where = " WHERE `categorie-id`=" . $catid;
+}
+// Le WHERE est deja presennt
+if ( ! empty($quartierid)) {
+    $where = ' AND `quartier-id`=' . $quartierid;
+}
+//BOUCLE affiche information
 $where .= ' LIMIT 5';
 $services = get_services($where);
-var_dump($services);
+//var_dump($services);
 
 
 //var_dump($services);
 
 
-/*$id = $_GET['id'];
-$cat_test = get_catagory_by_nom($id);
-var_dump($cat_test);*/
-
-
 //CATEGORIE ACCORDION
-$cat_test = get_categorie();
+//$cat_test = get_categorie();
 //var_dump($cat_test);
-
-/*$serv_resto = get_cat_restaurant();
-$serv_artist = get_cat_artistes();*/
-//var_dump($serv_artist);
 
 ?>
 
@@ -51,8 +64,8 @@ $serv_artist = get_cat_artistes();*/
                                     <div class="cat-ser">
                                         <p> <a href="" class="cat-link">Artistes</a></p>
                                         <p><a href="" class="cat-sublink"><?= $cat_test['id'] ?></a></p>
-                                        <p><a href="" class="cat-sublink">Photographes</a></p>
-                                        <p><a href="" class="cat-sublink">Peintres</a></p>
+                                        <p><a href="?catid=3" class="cat-sublink">Photographes</a></p>
+                                        <p><a href="?catid=4" class="cat-sublink">Peintres</a></p>
                                     </div>
                                     <div class="cat-ser">
                                         <p><a href="" class="cat-link">Juridique</a></p>
@@ -101,9 +114,9 @@ $serv_artist = get_cat_artistes();*/
                                     <div class="cat-ser">
                                         <p> <a href="#" class="cat-link">Restaurants</a></p>
 <!--                                        <p> <a href="" class="cat-link">Restaurants</a></p>-->
-                                        <p> <a href="" class="cat-sublink">Asiatiques</a></p>
-                                        <p> <a href="" class="cat-sublink">Italiens</a></p>
-                                        <p><a href="" class="cat-sublink">Mexicains</a></p>
+                                        <p> <a href="?catid=6" class="cat-sublink">Asiatiques</a></p>
+                                        <p> <a href="?catid=7" class="cat-sublink">Italiens</a></p>
+                                        <p><a href="?catid=8" class="cat-sublink">Mexicains</a></p>
                                     </div>
                                 </div>
                             </div><!--fin division 3-->
@@ -114,11 +127,6 @@ $serv_artist = get_cat_artistes();*/
 <!--      --><?php //} ?>
                 <div>
                 <!--annonces-->
-
-
-
-
-
 
                 <?php foreach ($services as $profil) { ?>
 
@@ -142,7 +150,7 @@ $serv_artist = get_cat_artistes();*/
                                     <img src="upload_images/position-annonce.png" alt="icon annonces clic guide montreal">
                                 </div>
                                 <div class="col-11 col-m-10 info_adresse">
-                                    <p><span class="quartier"><?= utf8_encode($profil['quartier']) ?></span>
+                                    <p><span class="quartier"><?= utf8_encode($profil['quartier-id']) ?></span>
                                     <p><?= utf8_encode($profil['adresse']) ?></p>
                                         <p><?= $profil['codepostal'] ?> Montréal, Québec</p>
                                         <p><span>Tel.: </span><?= $profil['telephone'] ?></p>
@@ -154,11 +162,6 @@ $serv_artist = get_cat_artistes();*/
                 <?php } ?>
 
                 </div>
-
-
-
-
-
 
                 <!--ennumeration-->
                 <div class="navigation_cat">

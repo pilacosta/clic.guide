@@ -4,13 +4,18 @@ require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
 
-$id = $_GET['id'];
+$quartiers = get_quartier();
+$catagories = get_categorie();
+
+var_dump($quartiers);
+
+/*$id = $_GET['id'];
 $categories = get_user_by_cat($id);
 //var_dump($categories);
 
 $id = $_GET['$id'];
 $quartiers = get_user_by_quartier($id)  ;
-var_dump($quartiers);
+var_dump($quartiers);*/
 
 //$qua = $_GET['quartier'];
 //$quartiers = get_last_3users() ;
@@ -106,21 +111,15 @@ if ($en_reception && empty($cat)) {
 }
 
 
-
-
-
-
-
-
 // Réception service quartier
-$horaire_valides = true;
-$temps = array(); // quartier sélectionné par l'utilisateur
-if (array_key_exists('horaire', $_POST)) {
-    $temps = $_POST['horaire'];
+$quartiers_valides = true;
+$quartier = array(); // quartier sélectionné par l'utilisateur
+if (array_key_exists('quartier', $_POST)) {
+    $quartier = $_POST['quartier'];
 }
 // Categorie est valide si on est affichage initial ou bien si on a au moins un item sélectionné
-if ($en_reception && empty($temps)) {
-    $horaire_valides = false;
+if ($en_reception && empty($quartier)) {
+    $quartiers_valides = false;
 }
 
 
@@ -279,12 +278,12 @@ require_once 'views/page_head.php';
                             <div class="col-6 form-largueur">
                                 <label for="categorie">Categorie : </label>
                                 <select class="<?= $categories_valides ? '' : 'invalid' ?>" name="categorie[]" id="categorie" ><!-- multiple="multiple"-->
-                                    <?php foreach ($categories as $cat) {
+                                    <?php foreach ($catagories as $cat) {
                                         $option_value = retire_accents($cat);
                                         ?>
                                         <option value="<?= $option_value ?>"
                                             <?= array_key_exists('categorie', $_POST) && in_array($option_value,$_POST['categorie']) ? 'selected="selected"' : '' ?>
-                                        ><?= $cat ?></option>
+                                        ><?= $cat['nom'] ?></option>
 
                                     <?php } ?>
                                 </select>
@@ -293,25 +292,24 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
-
-
-
                             <!-- Select liste de quartier -->
                             <div class="col-6 form-largueur">
                                 <label for="quartier">Quartier : </label>
-                                <select class="<?= $horaire_valides ? '' : 'invalid' ?>" name="quartier[]" id="quartier" ><!-- multiple="multiple"-->
+                                <select class="<?= $quartiers_valides ? '' : 'invalid' ?>" name="quartier[]" id="quartier" ><!-- multiple="multiple"-->
                                     <?php foreach ($quartiers as $quartier) {
                                         $option_value = retire_accents($quartier);
                                         ?>
                                         <option value="<?= $option_value ?>"
                                             <?= array_key_exists('$quartier', $_POST) && in_array($option_value,$_POST['$quartier']) ? 'selected="selected"' : '' ?>
-                                        ><?= $quartier ?></option>
+                                        ><?= utf8_encode($quartier['nom'])?></option>
                                     <?php } ?>
                                 </select>
-                                <?php if ( ! $horaire_valides) { ?>
+                                <?php if ( ! $quartiers_valides) { ?>
                                     <p>Au moins un horaire doit être sélectionné.</p>
                                 <?php } ?>
                             </div>
+
+<!--
 
 
 

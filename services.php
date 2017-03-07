@@ -45,8 +45,8 @@ $serv_artist = get_cat_artistes();
                                     </div>
                                     <div class="cat-ser">
                                         <p> <a href="" class="cat-link">Artistes</a></p>
-                                        <p><a href="" class="cat-sublink"><?= $cat_test['id'] ?></a></p>
-                                        <p><a href="" class="cat-sublink">Photographes</a></p>
+
+                                        <p><a href="?" class="cat-sublink">Photographes</a></p>
                                         <p><a href="" class="cat-sublink">Peintres</a></p>
                                     </div>
                                     <div class="cat-ser">

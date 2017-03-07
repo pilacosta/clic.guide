@@ -40,7 +40,7 @@ function get_services($where = '') {
 //    $query_str = 'SELECT * FROM `service` ' . $where; // Sélection de tous les articles
     $query_str = 'SELECT * FROM `service` ' . $where; // Sélection de tous les articles
     $res = $mysqli->query($query_str); // xécution de la requête
-//    var_dump($query_str);
+    var_dump($query_str);
     // Chargement des données, ligne par ligne (boucle while)
     $data = array();
     if ($res && ($res->num_rows > 0)) {
@@ -84,7 +84,7 @@ function get_user_by_id($id) {
 }
 
 
-//form inscription CATEGORIES
+//form inscription CATEGORIES ????
 // Requete : sélectionner 1 user par son categorie
 function get_user_by_cat($id) {
     global $mysqli;
@@ -102,26 +102,27 @@ function get_user_by_cat($id) {
 }
 
 
-//form inscription QUARTIER
-// Requete : sélectionner 1 user par son categorie
-function get_user_by_quartier($id) {
+//QUARTIERS
+function get_quartier($where = '') {
     global $mysqli;
-    $query_str = 'SELECT * FROM `quartier` ORDER BY `quartier`.`id`' . $id;
-    $res = $mysqli->query($query_str);  // execution de la requete
-    // chargement des données de la ligne
+    $query_str = 'SELECT * FROM `quartier` ORDER BY `quartier`.`nom` '. $where; // Sélection de tous les articles
+    $res = $mysqli->query($query_str); // xécution de la requête
+//    var_dump($query_str);
+    // Chargement des données, ligne par ligne (boucle while)
     $data = array();
     if ($res && ($res->num_rows > 0)) {
-        $data = $res->fetch_assoc();
+        while ($quartier = $res->fetch_assoc()) {
+            $data[$quartier['id']] = $quartier;
+        }
     }
+//    var_dump($data);
+
     return $data;
 }
-
 
 //CATEGORIES - ACCORDION
 function get_categorie($where = '') {
     global $mysqli;
-    // Rédaction de la requete sur les articles
-//    $query_str = 'SELECT * FROM `service` ' . $where; // Sélection de tous les articles
     $query_str = 'SELECT * FROM `categorie` ORDER BY `categorie`.`id`' . $where; // Sélection de tous les articles
     $res = $mysqli->query($query_str); // xécution de la requête
 //    var_dump($query_str);
@@ -137,7 +138,9 @@ function get_categorie($where = '') {
     return $data;
 }
 
-// Requete : RESTAURANTS
+
+
+// Requete : RESTAURANTS nooo
 function get_cat_restaurant() {
     global $mysqli;
     $query_str = "SELECT * FROM `categorie` ORDER BY `categorie`.`id`" ;
@@ -156,7 +159,7 @@ function get_cat_restaurant() {
 }
 
 
-// Requete : ARTISTES
+// Requete : ARTISTES nooo
 function get_cat_artistes() {
     global $mysqli;
     $query_str = "SELECT * FROM `categorie` ORDER BY `categorie`.`id`" ;
