@@ -8,46 +8,15 @@ $quartiers = get_quartier();
 $catagories = get_categorie();
 
 //var_dump($quartiers);
-
-
-
-
-/*$id = $_GET['id'];
-$categories = get_user_by_cat($id);
-//var_dump($categories);
-
-$id = $_GET['$id'];
-$quartiers = get_user_by_quartier($id)  ;
-var_dump($quartiers);*/
-
-//$qua = $_GET['quartier'];
-//$quartiers = get_last_3users() ;
-//var_dump($quartiers);
-
-
-
 ?>
 
 
-
-
 <?php
-//$page_title = 'formulaire inscription';
-
-
-//require_once 'defines.php';
-
-
-
-//var_dump($_POST);
-
-
 
 function retire_accents($str) {
     $resultat = strtolower(str_replace(array('é','ï'),array('e','i'),$str));
     return $resultat;
 }
-
 // Affichage initial du formulaire ? ou bien réception des données ?
 $en_reception = array_key_exists('saisie_nom', $_POST)
     && array_key_exists('saisie_prenom', $_POST)
@@ -101,7 +70,6 @@ if (array_key_exists('saisie_email', $_POST)) {
     $email_valide = (false !== filter_var($email, FILTER_VALIDATE_EMAIL));
 }
 
-
 // Réception service categorie
 $categories_valides = true;
 $cat = array(); // categorie sélectionné par l'utilisateur
@@ -113,7 +81,6 @@ if ($en_reception && empty($cat)) {
     $categories_valides = false;
 }
 
-
 // Réception service quartier
 $quartiers_valides = true;
 $quartier = array(); // quartier sélectionné par l'utilisateur
@@ -124,7 +91,6 @@ if (array_key_exists('quartier', $_POST)) {
 if ($en_reception && empty($quartier)) {
     $quartiers_valides = false;
 }
-
 
 //adresse
 $adresse = '';
@@ -160,31 +126,24 @@ if ($en_reception && empty($description)) {
     $description_valide = false;
 }
 
-
 if ($en_reception && $nom_valide
-    && $prenom_valide
     && $email_valide
     && $telephone_valide
     && $adresse_valide
     && $cdPostal_valide
     && $password_valide
-    && $horaire_valides
-    && $calendrier_valide
     && $description_valide) {
     // Les données de formulaire sont valides
     header('Location:index.php');
     exit;
 }
-
 require_once 'views/page_head.php';
-
 
 ?>
 
 <!---->
 
 <main>
-
     <div class="container">
 
         <div class="row section_form">
@@ -193,7 +152,6 @@ require_once 'views/page_head.php';
 
                     <div class="container">
                         <h1>Inscrire mon enterprise ou service</h1>
-<!--                        <form id="formulaire" action="profil.php" method="post">-->
                         <form id="formulaire" action="<?= basename(__FILE__) ?>" method="post">
 
                             <!--nom compagnie ou service-->
@@ -226,14 +184,12 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
-
                             <div class="row">
                                 <div class=" col-12 subtitres-form">
                                     <h3 >Mon enterprise ou service</h3>
                                     <p>Cette information apparaîtra sur votre profil</p>
                                 </div>
                             </div>
-
 
                             <!--courriel (visiteurs contacter)-->
                             <div class="col-6  form-largueur">
@@ -276,7 +232,6 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
-
                             <!-- Select liste de categories -->
                             <div class="col-6 form-largueur">
                                 <label for="categorie">Categorie : </label>
@@ -312,22 +267,18 @@ require_once 'views/page_head.php';
                                 <?php } ?>
                             </div>
 
-<!--
-
-
 
                             <!--    Description d l'emploi -->
                             <div class="row">
                                 <div class="col-12  area-description">
                                     <label for="saisie_description">Description de service (max 250 mots)</label>
                                     <textarea name="textarea" placeholder="Description..." id="saisie_description"
-                                              class="<?= $description_valide ? '' : 'invalid' ?>" rows="5" cols="68" ></textarea>
-                                    <?php if ( ! $description_valide) { ?>
+                                              class="<?= $description ? '' : 'invalid' ?>" rows="5" cols="68" ></textarea>
+                                    <?php if ( ! $description) { ?>
                                         <p>Vous devez écrire une description</p>
                                     <?php } ?>
                                 </div>
                             </div>
-
 
 
                             <div class=" row sec-enregistrer">
@@ -339,25 +290,20 @@ require_once 'views/page_head.php';
                                 </div>
                             </div>
 
-
                         </form>
                     </div><!--fin container-->
 
                 </div>
-
-
 
             </div><!--fin annonces-->
             <?php
             require_once 'views/col-droite.php';
             ?>
 
-
         </div><!--fin row-->
     </div><!--fin container-->
 
 </main>
-
 
 <?php
 require_once 'views/footer.php';

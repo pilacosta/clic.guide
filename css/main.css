@@ -14,6 +14,7 @@ ul, hr, h1, h2, h3, p{
 p{
     line-height: 1.2em;
 }
+
 h1{
     color: #980635;
     font-weight: 400;
@@ -44,13 +45,13 @@ hr{
 /* -------------------------SYSTEME DE GRILLES ------------------------*/
 .col-1{width: 8.33%;}
 .col-2{width: 16.66%;}
-.col-3{width: 25%; /*background-color: cornsilk;*/}
-.col-4{width: 33.33%; }
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
 .col-5{width: 41.66%;}
 .col-6{width: 50%;}
 .col-7{width: 58.33%;}
 .col-8{width: 66.66%; }
-.col-9{width: 75%; /*background-color: #a9c01b;*/}
+.col-9{width: 75%;}
 .col-10{width: 83.33%;}
 .col-11{width: 91.66%;}
 .col-12{width: 100%;}
@@ -77,13 +78,13 @@ hr{
     .col-m-6 {width: 50%;}
     .col-m-7 {width: 58.33%;}
     .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%; /*background-color: red;*/}
+    .col-m-9 {width: 75%;}
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 }
 
-/***********************/
+
 /*STYLES POUR TÉLÉPHONES JUSQU'A 768PX INCLUS*/
 @media only screen and (max-width:768px){
 
@@ -108,9 +109,8 @@ hr{
     visibility: hidden;
 }
 .sec_login #logo{
-    /*width: 30%;*/
     display: inline-block;
- vertical-align: bottom;
+    vertical-align: bottom;
     padding: 10px 0 10px 0;
 }
 .connexion{
@@ -199,17 +199,11 @@ main{
 .publi_annonce:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
-.entete-annonce{
-    /*margin: 5px 0 10px 0;*/
-}
-.logo_annonce{
-    /*margin: 5px 0 5px 0;*/
-}
+
 .info_annonce{
     padding-left: 20px;
 }
 .titre_info{
-    /*margin-top: 20px;*/
     text-align: right;
 }
 .titre_info h1:hover{
@@ -223,7 +217,6 @@ p.text_info {
     margin-top: 10px;
 }
 .info_adresse, .carte{
-    /*margin-top: 10px;*/
 }
 .carte{
     width: 40px;
@@ -245,7 +238,6 @@ p.text_info {
 .col_droite{
     background-color: #f1f1f1;
     padding: 10px 0 10px 5px;
-    /*margin-left: 5px;*/
 }
 .col_droite p{
     font-size: 0.7rem;
@@ -318,10 +310,6 @@ p.text_info {
 /*liste categories*/
 .cat-ser {
     width: 100%;
-    /*font-size: 0.9rem;*/
-    /*padding-right: 15px;*/
-    /*display: inline;*/
-    /*float: left;*/
     text-align: left;
     margin-bottom: 10px;
 }
@@ -333,7 +321,6 @@ p.text_info {
 }
 .cat-sublink{
     font-size: 0.8rem;
-    /*line-height: 0.5rem;*/
     color: #666;
     text-decoration: none;
     margin-left: 10px;
@@ -435,11 +422,7 @@ label{
     color: #980635;
     font-size: 0.6rem;
 }
-#msg_erreur {
-    text-align: center;
-    margin: 10px auto;
-    color: #ac2546;
-}
+
 /* ------------------ form inscription --------------------------- */
 
 .subtitres-form h3{
@@ -454,6 +437,9 @@ label{
     font-weight: 300;
     color: #333;
     line-height: 1.2em;
+}
+.col-12.subtitres-form p {
+    color: #980635;
 }
 .form_inscripion {
     margin: auto;
@@ -537,9 +523,13 @@ label{
 }
 #msg_erreur {
     text-align: center;
-    margin: 50px auto;
+    /*margin: 50px auto;*/
     font-size: 0.7rem;
     color: #fc7474;
+
+    width: 95%;
+    /*background-color: silver;*/
+    padding: 20px 0 20px 0;
 }
 .invalid {
     background-color: #fff4f4;
@@ -580,7 +570,6 @@ font-size: 1rem;
 .col_droite-profil{
     background-color: #fffcdd;
     padding: 10px 0 10px 0;
-    /*margin-left: 5px;*/
 }
 .col_droite-profil p, ul{
     font-size: 0.7rem;
@@ -603,6 +592,11 @@ font-size: 1rem;
 .info-col-droite{
     margin: 0 0 10px 0;
     padding: 10px;
+}
+
+.col-6.col-m-6.profil-droite {
+    margin-left: 430px;
+    margin-top: 20px;
 }
 
 .profil-droite{
@@ -672,24 +666,21 @@ a.bouton-sup{
 /* -------------------------------- detail------------------------------------ */
 
 .detail-bg{
-    /*background-color: #ac2546;*/
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     margin: 5px 0 10px 0;
-    /*border-top: solid 1px  #c0c0c0;*/
     padding-top: 10px;
 
 }
 .detail-annonce{
-    padding: 10px;
+    padding: 0 20px 0 20px;
 }
 
 .ajout-image-detal{
     text-align: center;
-    margin-top: -10px;
+    margin: 10px 0 10px 0;
 }
 
 .retour-detail a{
-    /*margin: 20px 0 0 20px;*/
     padding: 15px;
     font-size: 0.8rem;
     color: #4f021a;
@@ -712,19 +703,16 @@ color: #980635;
     font-weight: 400;
 }
 .col_droite_detail{
-    /*background-color: #f1f17a;*/
     padding: 20px ;
-    /*text-align: left;*/
 }
 .logo-detail{
     text-align: center;
 }
 
 .adresse-detail{
-    margin: 10px 0 10px 0;
+    margin: 0 0 10px 0;
 }
 .adresse-detail p{
-    /*color: #980635;*/
     font-size: 0.9rem;
     line-height: 1.5em;
     display: block;
@@ -737,33 +725,19 @@ color: #980635;
     color: #4f021a;
 
 }
-
-.col_droite_detail .carte{
-    /*margin-left: 20px;*/
+.icon-pisition-detail{
+    display: none;
 }
 .adresse-detail{
     display: block;
-    /*display: inline-block;*/
-
 }
-.carte{
-    display: block;
-    /*display: inline-block;*/
-    /*vertical-align: top;*/
-    /*margin-top: 200px;*/
-    /*margin-right: -500px;*/
 
-
-}
 
 /*googlemap*/
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
 #map {
     height: 100%;
 }
-/* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
     margin: 0;
@@ -785,7 +759,27 @@ html, body {
     font-size: 1.1rem;
 }
 
+/* -------------------------------- FAQ------------------------------------ */
 
+.info-a-faq  {
+    padding: 0 30px 0 30px ;
+}
+.info-a-faq ul {
+    list-style: none
+}
+.info-a-faq ul a{
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color: #980635;
+}
+.info-a-faq ul a:hover{
+    color: #4f021a;
+}
+.info-a-faq h2 {
+    font-size: 1rem;
+    font-weight: 400;
+
+}
 
 /* --------------------------------responsive------------------------------------ */
 
@@ -805,18 +799,15 @@ html, body {
     #form_recherche select#categorie{
         width: 95%;
         margin: 10px 10px 10px 0;
-        /*padding: 8px;*/
     }
 
     #form_recherche select#quartierid{
         width: 95%;
         margin: 10px 10px 10px 0;
-        /*padding: 8px;*/
     }
 
     #form_recherche #search_submit{
         margin: 10px 10px 10px 0;
-        /*padding: 8px;*/
     }
 
     .bouton-submit a.fa{
@@ -868,9 +859,6 @@ html, body {
         font-size: 0.9rem;
     }
 
-    .info_adresse, .carte{
-        /*margin-top: 5px;*/
-    }
     .carte{
         width: 30px;
         margin-right: 5px;
@@ -909,6 +897,10 @@ html, body {
 
     /*profil*/
 
+    .col-6.col-m-6.profil-droite {
+        margin-left: 250px;
+    }
+
     .col-8.mod-image {
         margin: 20px;
         width: 40%;
@@ -935,9 +927,6 @@ html, body {
         background-color: #980635;
         width: 100%;
         min-height: 50px;
-        /*background-image: url(../images/g.png);
-        background-repeat: no-repeat;*/
-        /*background-attachment: fixed;*/
         background-position: 8% 5%;
         background-size: 40px;
     }
@@ -997,18 +986,15 @@ html, body {
 
     .bouton-submit {
         position: relative;
-
     }
 
     .bouton-submit a.fa {
         position: absolute;
-        margin-left: 35px;
+        margin-left: 150px;
         margin-top: -42px;
         font-size: 2rem;
         color: #eeeeee;
-
     }
-
     .text_carte_affaires {
         display: none;
     }
@@ -1017,7 +1003,6 @@ html, body {
     main {
         margin: 10px 0 10px 0;
     }
-
     .publi_annonce {
         width: 100%;
         padding: 5px;
@@ -1041,7 +1026,6 @@ html, body {
 
     .titre_info h1 {
         font-size: 0.8rem;
-        /*margin-top: 10px;*/
     }
 
     .logo_annonce {
@@ -1133,7 +1117,7 @@ html, body {
         color: #ffffff;
         margin-right: 30px;
         text-align: center;
-        padding: 10px;
+        margin-left: 22px;
     }
 
     .menu-footer li a:hover {
@@ -1141,7 +1125,6 @@ html, body {
     }
 
     .res_sociaux {
-        padding: 20px;
         text-align: center;
     }
 
@@ -1206,7 +1189,6 @@ html, body {
     }
 
     .form_inscripion .form-largueur {
-        /*padding: 0 15px 0 0;*/
         margin-top: 5px;
     }
 
@@ -1240,22 +1222,20 @@ html, body {
     .profil-base {
         margin: 10px 0 20px 0;
     }
-
-    .profil-gouche {
-        /*margin: 20px;*/
-    }
-
     .profil-gouche h1 {
         font-size: 1rem;
         color: #333;
     }
 
+    .col-6.col-m-6.profil-droite {
+        margin-left: 0;
+
+    }
+
     .profil-droite {
         text-align: left;
         width: 100%;
-        /*background-color: red;*/
         margin-top: 20px;
-
     }
 
     .profil-droite p {
@@ -1269,12 +1249,10 @@ html, body {
         padding: 8px 15px 8px 15px;
         width: 100%;
         color: #ffffff;
-
     }
 
     .ajout-image {
         margin: 10px 0 10px 0;
-
     }
 
     .col-8.mod-image {
@@ -1325,7 +1303,8 @@ html, body {
     }
 
     .adresse-detail {
-        margin: 10px 0 10px 0;
+        margin: 0;
+        text-align: center;
 
     }
 
@@ -1334,7 +1313,6 @@ html, body {
         line-height: 1.4em;
         text-align: center;
         display: block;
-
     }
 
     .adresse-detail p span a {
@@ -1344,12 +1322,14 @@ html, body {
 
     .adresse-detail p span a:hover {
         color: #4f021a;
-
     }
 
     .col_droite_detail .carte {
         display: none;
     }
-
+    .icon-pisition-detail{
+        width: 40px;
+        text-align: center;
+    }
 
 }

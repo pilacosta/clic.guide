@@ -12,7 +12,6 @@ if ( ! empty($serviceid)) {
     $where .= " WHERE `id`=" . $serviceid;
 }
 
-
 // Chargement du service
 $servicedata = get_services($where);
 if (empty($servicedata)) {
@@ -55,10 +54,13 @@ require_once 'views/header.php';
                         <div class="logo-detail">
                             <img src="<?= ARTICLE_IMG_PATH . $servicedata['logo'] ?>" alt="photo <?= $servicedata['titre'] ?>">
                         </div>
+                        <div class=" icon-pisition-detail">
+                            <img src="upload_images/position-annonce.png" alt="icon annonces clic guide montreal">
+                        </div>
 
                         <div class="adresse-detail">
                             <p><span class="quartier"><?= utf8_encode($quartiers[$servicedata['quartier-id']]) ?></span>
-                            <p><span><a href="#"><?= utf8_encode($servicedata['adresse']) ?> =></a></span></p>
+                            <p><span><a href="#"><?= utf8_encode($servicedata['adresse']) ?></a></span></p>
                             <p><?= $servicedata['codepostal'] ?> Montréal, Québec</p>
                             <p><span>Tel.: </span><?= $servicedata['telephone'] ?></p>
                             <p><?= $servicedata['courriel'] ?></p>

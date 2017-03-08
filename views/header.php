@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-1 bouton-submit">
                         <input type="submit" name="search" id="search_submit" value="">
-                        <div><a href="../test-form-inscription.php" class="fa fa-search"></a></div>
+                        <div><a href=".#" class="fa fa-search"></a></div>
 
                     </div>
                     <div class="col-3 text_carte_affaires">

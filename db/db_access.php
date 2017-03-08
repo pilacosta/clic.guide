@@ -1,27 +1,15 @@
 <?php
-/**
- *
- */
-/*define('DB_HOST', '127.0.0.1'); // Host DB
-define('DB_USERNAME', 'root'); // Host DB
+//local
+/*define('DB_HOST', 'localhost:8889'); // Host DB
+define('DB_USERNAME', 'toto'); // Host DB
 define('DB_PASSWORD', ''); // Host DB
 define('DB_NAME', 'clic-guide-montreal'); // Host DB*/
 
-
-//local
-define('DB_HOST', 'localhost:8889'); // Host DB
-define('DB_USERNAME', 'toto'); // Host DB
-define('DB_PASSWORD', ''); // Host DB
-define('DB_NAME', 'clic-guide-montreal'); // Host DB
-
 //sentora
-/*define('DB_HOST', 'localhost'); // Host DB
+define('DB_HOST', 'localhost'); // Host DB
 define('DB_USERNAME', 'clicguide'); // Host DB
 define('DB_PASSWORD', 'qu9ebu3u6'); // Host DB
-define('DB_NAME', 'pacosta_clicguide'); // Host DB*/
-
-
-
+define('DB_NAME', 'pacosta_clicguide'); // Host DB
 
 
 $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);

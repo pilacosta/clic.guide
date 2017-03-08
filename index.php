@@ -40,14 +40,7 @@ $where .= ' LIMIT 5';
 $services = get_services($where);
 //var_dump($services);
 
-
 //var_dump($services);
-
-
-//CATEGORIE ACCORDION
-//$cat_test = get_categorie();
-//var_dump($cat_test);
-
 ?>
 
 <main>
@@ -62,7 +55,6 @@ $services = get_services($where);
 
                             <!--section categories-->
                             <div class="row"><!--division en 3-->
-     <?php /*foreach ($services as $profil) { */?>
                                 <div class="col-4 col-m-4 mi-menu">
                                     <div class="cat-ser">
                                         <p><a href="" class="cat-link">Agents immobiliers</a></p>
@@ -136,7 +128,6 @@ $services = get_services($where);
                 <!--annonces-->
 
                 <?php foreach ($services as $profil) { /*var_dump($quartiers[$profil['quartier-id']])*/?>
-
 
                 <div class="row publi_annonce" >
                     <div class="col-3 image-annonce">
