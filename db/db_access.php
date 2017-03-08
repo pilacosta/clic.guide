@@ -21,6 +21,9 @@ define('DB_PASSWORD', 'qu9ebu3u6'); // Host DB
 define('DB_NAME', 'pacosta_clicguide'); // Host DB*/
 
 
+
+
+
 $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($mysqli->connect_errno) {
     echo "Echec lors de la connexion à MySQL : ", $mysqli->connect_error;
@@ -40,7 +43,7 @@ function get_services($where = '') {
 //    $query_str = 'SELECT * FROM `service` ' . $where; // Sélection de tous les articles
     $query_str = 'SELECT * FROM `service` ' . $where; // Sélection de tous les articles
     $res = $mysqli->query($query_str); // xécution de la requête
-    var_dump($query_str);
+//    var_dump($query_str);
     // Chargement des données, ligne par ligne (boucle while)
     $data = array();
     if ($res && ($res->num_rows > 0)) {
@@ -112,7 +115,7 @@ function get_quartier($where = '') {
     $data = array();
     if ($res && ($res->num_rows > 0)) {
         while ($quartier = $res->fetch_assoc()) {
-            $data[$quartier['id']] = $quartier;
+            $data[$quartier['id']] = $quartier['nom'];
         }
     }
 //    var_dump($data);
@@ -123,14 +126,14 @@ function get_quartier($where = '') {
 //CATEGORIES - ACCORDION
 function get_categorie($where = '') {
     global $mysqli;
-    $query_str = 'SELECT * FROM `categorie` ORDER BY `categorie`.`id`' . $where; // Sélection de tous les articles
+    $query_str = 'SELECT * FROM `categorie` ORDER BY `categorie`.`non`' . $where; // Sélection de tous les articles
     $res = $mysqli->query($query_str); // xécution de la requête
 //    var_dump($query_str);
     // Chargement des données, ligne par ligne (boucle while)
     $data = array();
     if ($res && ($res->num_rows > 0)) {
         while ($categorie = $res->fetch_assoc()) {
-            $data[$categorie['id']] = $categorie;
+            $data[$categorie['id']] = $categorie['nom'];
         }
     }
 //    var_dump($data);
@@ -177,3 +180,7 @@ function get_cat_artistes() {
     return $data;
 }
 
+
+
+$quartiers = get_quartier();
+$catagories = get_categorie();

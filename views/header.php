@@ -1,8 +1,4 @@
 <?php
-//require '../check_connect.php';
-$quartiers = get_quartier();
-//$catagories = get_categorie();
-
 ?>
 
 <header>
@@ -46,12 +42,11 @@ $quartiers = get_quartier();
                     </div>
 
                     <div class="col-4">
-                        <select name="quartier" id="quartier">
+                        <select name="quartierid" id="quartierid">
                             <option value="-1">Quartier...</option>
                             <?php
-                            //var_dump($quartiers);
                             foreach ($quartiers as $id => $quartier) {
-                                echo "<option value=\"$id\">" . utf8_encode($quartier['nom']) . '</option>';
+                                echo "<option value=\"$id\">" . utf8_encode($quartier) . '</option>';
                             }
                             ?>
                         </select>

@@ -1,17 +1,28 @@
 <?php
 require_once  'defines.php';
 require_once 'db/db_access.php';
+
+$serviceid ='';
+if(array_key_exists('serviceid', $_REQUEST)){
+    $serviceid = $_REQUEST['serviceid'];
+}
+//var_dump('serviceid=',$serviceid);
+$where = '';
+if ( ! empty($serviceid)) {
+    $where .= " WHERE `id`=" . $serviceid;
+}
+
+
+// Chargement du service
+$servicedata = get_services($where);
+if (empty($servicedata)) {
+   // redirection ou message id invalide
+}
+$servicedata = $servicedata[$serviceid];
+
 require_once 'views/page_head.php';
 require_once 'views/header.php';
-
-$id = $_GET['id'];
-$user = get_user_by_id($id);
-var_dump($user);
-
-//var_dump();
-
-// Chargement des articles
-//$services = get_services('LIMIT 5');
+//var_dump($servicedata);
 ?>
 
 
@@ -21,39 +32,36 @@ var_dump($user);
             <p><a href="index.php"><< Retour</a></p>
         </div>
         <div class="row detail-bg">
-            <?php /*foreach ($services as $profil) { */?>
                 <div class="row detail-annonce" ><!--onclick="location.href='test.html'"-->
                     <div class="col-9 gouche-detail">
                         <div class="row ">
                             <div class="col-12 detail-nom">
-                                <h1><?= utf8_encode($user['titre']) ?></h1>
-<!--                                <p><span>Quartier : </span>--><?//= utf8_encode($profil['quartier']) ?><!--</p>-->
+                                <h1><?= $servicedata['titre'] ?></h1>
                             </div>
                         </div>
                         <hr class="col-12">
-
                         <div class="info-detail">
-                            <p><?= utf8_encode($user['infoLar'])?></p>
+                            <p><?= utf8_encode($servicedata['infoLar'])?></p>
                         </div>
 
                         <div class="row">
                             <div class="col-12 col-m-12 ajout-image-detal">
-                                <img src="<?= ARTICLE_IMG_PATH . $user['photo'] ?>" alt="photo <?= $user['titre'] ?>">
+                                <img src="<?= ARTICLE_IMG_PATH . $servicedata['photo'] ?>" alt="photo <?= $servicedata['titre'] ?>">
                             </div><!--fin adresse-->
                         </div>
                     </div>
 
                     <div class="col-3 col_droite_detail">
                         <div class="logo-detail">
-                            <img src="<?= ARTICLE_IMG_PATH . $user['logo'] ?>" alt="photo <?= $user['titre'] ?>">
+                            <img src="<?= ARTICLE_IMG_PATH . $servicedata['logo'] ?>" alt="photo <?= $servicedata['titre'] ?>">
                         </div>
 
                         <div class="adresse-detail">
-                            <p><span class="quartier"><?= $user['quartier'] ?></span>
-                            <p><?= utf8_encode($user['adresse']) ?></p>
-                            <p><?= $user['codepostal'] ?> Montréal, Québec</p>
-                            <p><span>Tel.: </span><?= $user['telephone'] ?></p>
-                            <p><?= $user['courriel'] ?></p>
+                            <p><span class="quartier"><?= utf8_encode($quartiers[$servicedata['quartier-id']]) ?></span>
+                            <p><span><a href="#"><?= utf8_encode($servicedata['adresse']) ?> =></a></span></p>
+                            <p><?= $servicedata['codepostal'] ?> Montréal, Québec</p>
+                            <p><span>Tel.: </span><?= $servicedata['telephone'] ?></p>
+                            <p><?= $servicedata['courriel'] ?></p>
                         </div>
 
                             <div class="carte">
@@ -62,7 +70,6 @@ var_dump($user);
                             </div>
                     </div>
                 </div><!--fin publi_annonce-->
-            <?php /*} */?>
         </div> <!--     fin mi test nuevo  -->
     </div><!--fin container-->
 

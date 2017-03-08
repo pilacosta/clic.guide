@@ -141,7 +141,7 @@ hr{
     width: 100%;
     background-color: #fecc6f;
 }
-#form_recherche select#categorie, select#quartier{
+#form_recherche select#categorie, select#quartierid{
     width: 95%;
     margin: 20px 20px 20px 0;
     padding: 10px;
@@ -685,6 +685,7 @@ a.bouton-sup{
 
 .ajout-image-detal{
     text-align: center;
+    margin-top: -10px;
 }
 
 .retour-detail a{
@@ -699,8 +700,10 @@ color: #980635;
 }
 .gouche-detail .info-detail{
     margin: 20px 0 20px 0;
+}
 
-
+.gouche-detail .info-detail p{
+    font-size: 0.9rem;
 }
 .detail-nom{
     margin-bottom: 10px;
@@ -719,15 +722,22 @@ color: #980635;
 
 .adresse-detail{
     margin: 10px 0 10px 0;
-
 }
 .adresse-detail p{
-    color: #980635;
+    /*color: #980635;*/
     font-size: 0.9rem;
+    line-height: 1.5em;
     display: block;
-    /*margin: 20px 0 20px 0;*/
+}
+.adresse-detail p span a{
+    color: #980635;
+    font-size:  0.9rem;
+}
+.adresse-detail p span a:hover{
+    color: #4f021a;
 
 }
+
 .col_droite_detail .carte{
     /*margin-left: 20px;*/
 }
@@ -760,7 +770,7 @@ html, body {
     padding: 0;
 }
 
-/* -------------------------------- a prpos------------------------------------ */
+/* -------------------------------- a propos------------------------------------ */
 .info-a-propos{
     padding: 0 30px 0 30px ;
 }
@@ -798,7 +808,7 @@ html, body {
         /*padding: 8px;*/
     }
 
-    #form_recherche select#quartier{
+    #form_recherche select#quartierid{
         width: 95%;
         margin: 10px 10px 10px 0;
         /*padding: 8px;*/
@@ -912,13 +922,15 @@ html, body {
 }
 
 /*@media 768 ----------------------------------------------------------*/
-@media only screen and (max-width: 768px){
-    #wrapper{
-        width:100%;
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        width: 100%;
     }
-    .sec_login #logo{
+
+    .sec_login #logo {
         display: none;
     }
+
     .sec_login {
         background-color: #980635;
         width: 100%;
@@ -929,63 +941,66 @@ html, body {
         background-position: 8% 5%;
         background-size: 40px;
     }
-    .logo-xl-sm{
+
+    .logo-xl-sm {
         width: 500px;
     }
-    .logo-xl-sm #logo-small{
+
+    .logo-xl-sm #logo-small {
         width: 40px;
-        margin : 10px 0 5px 15px;
+        margin: 10px 0 5px 15px;
         visibility: visible;
     }
 
-    .connexion{
+    .connexion {
         margin-left: 20px;
     }
-    .connexion a{
+
+    .connexion a {
         padding: 8px 10px 8px 10px;
         margin-right: 0;
     }
 
     /*filtres*/
-
-    .filtres_top .container{
+    .filtres_top .container {
         width: 85%;
     }
 
-    .filtres_top{
+    .filtres_top {
         width: 100%;
         background-color: #fecc6f;
         padding-top: 5px;
     }
 
-    #form_recherche select#categorie{
+    #form_recherche select#categorie {
         width: 100%;
-        margin: 0 0  5px 0;
+        margin: 0 0 5px 0;
         padding: 8px;
         border: 0;
     }
 
-    #form_recherche select#quartier{
+    #form_recherche select#quartierid {
         width: 100%;
-        margin: 0 0  5px 0;
+        margin: 0 0 5px 0;
         padding: 8px;
         border: 0;
     }
 
-    #form_recherche #search_submit{
+    #form_recherche #search_submit {
         width: 100%;
-        margin: 0 0  5px 0;
+        margin: 0 0 5px 0;
         padding: 10px;
         border: 0;
         background-color: #4f021a;
         color: #ffffff;
     }
 
-    .bouton-submit{
+    .bouton-submit {
         position: relative;
 
     }
-    .bouton-submit a.fa{
+
+    .bouton-submit a.fa {
         position: absolute;
         margin-left: 35px;
         margin-top: -42px;
@@ -993,137 +1008,156 @@ html, body {
         color: #eeeeee;
 
     }
-    .text_carte_affaires{
+
+    .text_carte_affaires {
         display: none;
     }
 
     /*main*/
-    main{
+    main {
         margin: 10px 0 10px 0;
     }
 
-    .publi_annonce{
+    .publi_annonce {
         width: 100%;
         padding: 5px;
         margin-bottom: 10px;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
         cursor: pointer;
     }
-    .publi_annonce:hover{
+
+    .publi_annonce:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     }
-    .image-annonce img{
+
+    .image-annonce img {
         max-width: 90px;
     }
 
-    .info_annonce{
+    .info_annonce {
         margin-left: 90px;
         margin-top: -110px;
     }
-    .titre_info h1{
-        font-size:0.8rem ;
+
+    .titre_info h1 {
+        font-size: 0.8rem;
         /*margin-top: 10px;*/
     }
 
-    .logo_annonce{
+    .logo_annonce {
         display: none;
     }
-    .titre_info{
+
+    .titre_info {
         margin-top: 15px;
         text-align: left;
     }
-    hr{
+
+    hr {
         display: none;
     }
+
     p.text_info {
         display: none;
     }
-    .div-adresse{
+
+    .div-adresse {
         margin-top: 5px;
     }
 
-    .info_adresse, .carte{
+    .info_adresse, .carte {
         /*margin-top: 1px;*/
     }
-    .carte{
+
+    .carte {
         width: 25px;
     }
 
     .info_adresse {
-        margin-left:5px;
+        margin-left: 5px;
         /*margin-top: 1px;*/
         width: 220px;
     }
+
     .info_adresse p {
         font-size: 0.7rem;
 
     }
-    .info_adresse span{
+
+    .info_adresse span {
         font-weight: 400;
     }
-    .quartier{
+
+    .quartier {
         font-weight: 400;
         color: #980635;
     }
 
-    .fondo-anuncios{
+    .fondo-anuncios {
         background-color: red;
     }
 
     /*col droite*/
-    .col_droite_pub{
+    .col_droite_pub {
         padding: 0;
         margin: 10px 0 20px 0;
     }
 
-    .col_droite_pub img{
+    .col_droite_pub img {
         width: 48%;
         display: inline-block;
         vertical-align: top;
     }
 
     /* ------------------ footer--------------------------- */
-
-    .logo-footer{
+    .logo-footer {
         display: none;
     }
-    .menu-footer{
+
+    .menu-footer {
         width: 100%;
         background-color: #980635;
     }
-    .menu-sec{
+
+    .menu-sec {
         padding: 20px;
         text-align: center;
     }
-    .menu-footer li{
+
+    .menu-footer li {
         display: block;
         color: #ffffff;
     }
-    .menu-footer li a{
+
+    .menu-footer li a {
         color: #ffffff;
         margin-right: 30px;
         text-align: center;
         padding: 10px;
     }
-    .menu-footer li a:hover{
-        color: #fecc6f;
-    }
-    .res_sociaux{
-        padding: 20px;
-        text-align: center;
-    }
-    .res_sociaux .fa{
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 2rem;
-        display:inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
-    }
-    .res_sociaux .fa:hover{
+
+    .menu-footer li a:hover {
         color: #fecc6f;
     }
 
-    .copyright-footer{
+    .res_sociaux {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .res_sociaux .fa {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 2rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .res_sociaux .fa:hover {
+        color: #fecc6f;
+    }
+
+    .copyright-footer {
         background-color: #4f021a;
         color: #f1f1f1;
         text-align: center;
@@ -1132,90 +1166,104 @@ html, body {
     }
 
     /*form connexion*/
-
-    .section_form{
+    .section_form {
     }
 
     .form_connexion .container {
         width: 85%;
     }
+
     .form_connexion .form-largueur {
         padding: 0;
         margin-top: 5px;
     }
 
-    .col_droite .container{
+    .col_droite .container {
         width: 100%;
         padding: 0;
     }
 
-    .col_droite{
+    .col_droite {
         background-color: #f1f1f1;
         padding: 10px 0 10px 20px;
     }
-    .col_droite p{
+
+    .col_droite p {
         font-size: 0.6rem;
     }
-    .col_droite h2{
+
+    .col_droite h2 {
         font-size: 0.8rem;
     }
-    .col_droite .info-col-droite{
+
+    .col_droite .info-col-droite {
         margin-bottom: 5px;
     }
 
     /*form inscription*/
-.sec-enregistrer{
-    margin-bottom: 20px;
-}
+    .sec-enregistrer {
+        margin-bottom: 20px;
+    }
+
     .form_inscripion .form-largueur {
         /*padding: 0 15px 0 0;*/
         margin-top: 5px;
     }
-    .form-annuler{
-width: 20%;
+
+    .form-annuler {
+        width: 20%;
     }
+
     .col-10.form-annuler {
         margin-top: -30px;
         margin-left: 130px;
     }
 
     /* --------------------------------profil------------------------------------ */
-    .bg-bienvenue{
+    .bg-bienvenue {
         padding: 10px;
     }
-    .bg-bienvenue h1{
+
+    .bg-bienvenue h1 {
         font-size: 1.1rem;
     }
-    .bg-bienvenue p{
+
+    .bg-bienvenue p {
         font-size: 0.8rem;
     }
-    .container-prof{
+
+    .container-prof {
         margin: 0;
         padding: 0 10px 0 10px;
     }
-    .profil-base{
+
+    .profil-base {
         margin: 10px 0 20px 0;
     }
+
     .profil-gouche {
-       /*margin: 20px;*/
+        /*margin: 20px;*/
     }
-    .profil-gouche h1{
+
+    .profil-gouche h1 {
         font-size: 1rem;
         color: #333;
     }
 
-    .profil-droite{
+    .profil-droite {
         text-align: left;
         width: 100%;
         /*background-color: red;*/
         margin-top: 20px;
 
     }
-    .profil-droite p{
+
+    .profil-droite p {
         margin: 20px 0 20px 0;
         text-align: left;
     }
-    .profil-droite a{
+
+    .profil-droite a {
         background-color: #4f021a;
         text-transform: uppercase;
         padding: 8px 15px 8px 15px;
@@ -1224,7 +1272,7 @@ width: 20%;
 
     }
 
-    .ajout-image{
+    .ajout-image {
         margin: 10px 0 10px 0;
 
     }
@@ -1233,6 +1281,7 @@ width: 20%;
         margin: 20px;
         width: 80%;
     }
+
     a.bouton-mod {
         background-color: #4f021a;
         padding: 8px 15px 8px 15px;
@@ -1240,13 +1289,67 @@ width: 20%;
         text-transform: uppercase;
         font-size: 0.8rem;
     }
+
     a.bouton-mod:hover {
         background-color: #980635;
     }
-    a.bouton-sup{
+
+    a.bouton-sup {
         text-transform: uppercase;
         font-size: 0.8rem;
         color: #980635;
         padding: 8px 15px 8px 5px;
     }
+
+    /* --------------------------------detal------------------------------------ */
+    .gouche-detail .info-detail p {
+        display: none;
+    }
+
+    .detail-bg {
+        margin: 5px 0 10px 0;
+        padding-top: 0;
+
+    }
+
+    .detail-annonce {
+        padding: 5px;
+    }
+
+    .ajout-image-detal {
+        margin-top: -20px;
+    }
+
+    .logo-detail {
+        margin-top: -10px;
+    }
+
+    .adresse-detail {
+        margin: 10px 0 10px 0;
+
+    }
+
+    .adresse-detail p {
+        font-size: 0.9rem;
+        line-height: 1.4em;
+        text-align: center;
+        display: block;
+
+    }
+
+    .adresse-detail p span a {
+        color: #980635;
+        font-size: 0.9rem;
+    }
+
+    .adresse-detail p span a:hover {
+        color: #4f021a;
+
+    }
+
+    .col_droite_detail .carte {
+        display: none;
+    }
+
+
 }

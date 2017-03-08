@@ -7,7 +7,10 @@ require_once 'views/header.php';
 $quartiers = get_quartier();
 $catagories = get_categorie();
 
-var_dump($quartiers);
+//var_dump($quartiers);
+
+
+
 
 /*$id = $_GET['id'];
 $categories = get_user_by_cat($id);
@@ -301,7 +304,7 @@ require_once 'views/page_head.php';
                                         ?>
                                         <option value="<?= $option_value ?>"
                                             <?= array_key_exists('$quartier', $_POST) && in_array($option_value,$_POST['$quartier']) ? 'selected="selected"' : '' ?>
-                                        ><?= utf8_encode($quartier['nom'])?></option>
+                                        ><?= utf8_encode($quartier['id'])?></option>
                                     <?php } ?>
                                 </select>
                                 <?php if ( ! $quartiers_valides) { ?>

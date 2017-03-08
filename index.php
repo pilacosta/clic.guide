@@ -4,32 +4,39 @@ require_once 'db/db_access.php';
 require_once 'views/page_head.php';
 require_once 'views/header.php';
 
-$quartiers = get_quartier();
-$catagories = get_categorie();
 
+//var_dump($_REQUEST);
 //Recuperation parametres de requete
 //
 $catid ='';
-if(array_key_exists('catid', $_REQUEST)){
+if(array_key_exists('catid', $_REQUEST) && ($_REQUEST['catid'] != -1)){
     $catid = $_REQUEST['catid'];
 }
-var_dump('catid=',$catid);
+//var_dump('catid=',$catid);
 
 $quartierid ='';
-if (array_key_exists('quartier', $_REQUEST) && ($_REQUEST['quartier'] != -1)) {
-    $quartierid = $_REQUEST['quartier'];
+if (array_key_exists('quartierid', $_REQUEST) && ($_REQUEST['quartierid'] != -1)) {
+    $quartierid = $_REQUEST['quartierid'];
 }
-// Chargement des articles
+//var_dump('quartierid=',$quartierid);
+
+// Clause Where
 $where = '';
 if ( ! empty($catid)) {
-    $where = " WHERE `categorie-id`=" . $catid;
+    $where .= " WHERE `categorie-id`=" . $catid;
 }
-// Le WHERE est deja presennt
+// Le WHERE est deja present
 if ( ! empty($quartierid)) {
-    $where = ' AND `quartier-id`=' . $quartierid;
+    if (-1 !== strpos($where, 'WHERE')) {
+        $where .= ' AND ';
+    } else {
+        $where .= ' WHERE ';
+    }
+    $where .= '`quartier-id`=' . $quartierid;
 }
 //BOUCLE affiche information
 $where .= ' LIMIT 5';
+
 $services = get_services($where);
 //var_dump($services);
 
@@ -128,7 +135,8 @@ $services = get_services($where);
                 <div>
                 <!--annonces-->
 
-                <?php foreach ($services as $profil) { ?>
+                <?php foreach ($services as $profil) { /*var_dump($quartiers[$profil['quartier-id']])*/?>
+
 
                 <div class="row publi_annonce" >
                     <div class="col-3 image-annonce">
@@ -140,7 +148,7 @@ $services = get_services($where);
                                 <img src="<?= ARTICLE_IMG_PATH . $profil['logo'] ?>" alt="photo <?= $profil['titre'] ?>">
                             </div>
                             <div class="col-8 titre_info">
-                                <a href="detail.php?titre=<?= $profil['id'] ?>"><h1><?= utf8_encode($profil['titre']) ?></h1></a>
+                                <a href="detail.php?serviceid=<?= $profil['id'] ?>"><h1><?= utf8_encode($profil['titre']) ?></h1></a>
                             </div>
                         </div>
                         <hr class="col-12">
@@ -150,7 +158,7 @@ $services = get_services($where);
                                     <img src="upload_images/position-annonce.png" alt="icon annonces clic guide montreal">
                                 </div>
                                 <div class="col-11 col-m-10 info_adresse">
-                                    <p><span class="quartier"><?= utf8_encode($profil['quartier-id']) ?></span>
+                                    <p><span class="quartier"><?= utf8_encode($quartiers[$profil['quartier-id']]) ?></span>
                                     <p><?= utf8_encode($profil['adresse']) ?></p>
                                         <p><?= $profil['codepostal'] ?> Montréal, Québec</p>
                                         <p><span>Tel.: </span><?= $profil['telephone'] ?></p>
